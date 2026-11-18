@@ -3,14 +3,12 @@ import { GoldCross, DoveEmblem, OrnateDivider, FloralCorner } from './GoldOrname
 import { Calendar, MapPin, MessageSquareText } from 'lucide-react';
 
 export const HeroSection = ({ onPhotoClick }) => {
-  // Generate Google Calendar Link
   const handleAddToCalendar = () => {
     const title = encodeURIComponent("Halesh's Cradle Ceremony");
     const details = encodeURIComponent(
       "You are warmly invited to celebrate the Cradle Ceremony of baby Halesh with the Halesh family at Eden Garden Function Hall, Bidar."
     );
     const location = encodeURIComponent("Eden Garden Function Hall, Mailoor, Near GND College, Bidar, Karnataka");
-    // 22 Nov 2026, 14:40 to 18:00 IST (UTC: 20261122T091000Z to 20261122T123000Z)
     const dates = "20261122T091000Z/20261122T123000Z";
     const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&details=${details}&location=${location}&dates=${dates}`;
     window.open(googleCalendarUrl, '_blank', 'noopener,noreferrer');
@@ -21,13 +19,16 @@ export const HeroSection = ({ onPhotoClick }) => {
       <div className="hero-background-pattern" />
 
       <div className="hero-card">
+        {/* 5-Color Palette Spectrum Top Ribbon */}
+        <div className="hero-spectrum-top" />
+
         <div className="hero-inner-border" />
         <FloralCorner position="top-left" size={48} className="envelope-corner top-left" />
         <FloralCorner position="top-right" size={48} className="envelope-corner top-right" />
         <FloralCorner position="bottom-left" size={48} className="envelope-corner bottom-left" />
         <FloralCorner position="bottom-right" size={48} className="envelope-corner bottom-right" />
 
-        {/* Top Reverent Symbolism */}
+        {/* Reverent Emblems */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 14, marginBottom: 8 }}>
           <DoveEmblem size={26} />
           <GoldCross size={28} />
@@ -36,13 +37,13 @@ export const HeroSection = ({ onPhotoClick }) => {
 
         <div className="hero-kicker">A Sacred Celebration of Life &amp; Grace</div>
 
-        {/* Baby Name in Grand Script Calligraphy */}
+        {/* Baby Name in High-Resolution Bold & Crisp Typography */}
         <h1 className="hero-main-name">Halesh</h1>
 
         {/* Occasion Label */}
         <div className="hero-ceremony-label">Cradle Ceremony</div>
 
-        {/* Beautiful Arched Gold Frame for Baby Photo */}
+        {/* Arched Gold Frame for Baby Photo */}
         <div className="hero-portrait-wrapper">
           <div
             className="hero-portrait-frame"

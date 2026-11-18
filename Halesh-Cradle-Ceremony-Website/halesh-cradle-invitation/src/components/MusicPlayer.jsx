@@ -142,3 +142,4 @@ export const MusicPlayer = ({ autoStartRequested }) => {
     </button>
   );
 };
+

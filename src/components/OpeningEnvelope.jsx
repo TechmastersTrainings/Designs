@@ -9,19 +9,19 @@ export const OpeningEnvelope = ({ isOpen, onOpen }) => {
     if (isAnimating || isOpen) return;
     setIsAnimating(true);
 
-    // After animation sequence completes, notify parent
     setTimeout(() => {
       onOpen();
     }, 1100);
   };
 
-  // Sparkle particles for celebration effect
-  const particles = Array.from({ length: 24 }).map((_, i) => ({
+  // 5-Color celebration particles from palette
+  const particles = Array.from({ length: 26 }).map((_, i) => ({
     id: i,
-    left: `${(i * 4.3 + 3) % 96}%`,
-    delay: `${(i * 0.28) % 3.5}s`,
+    left: `${(i * 3.8 + 2) % 96}%`,
+    delay: `${(i * 0.25) % 3.5}s`,
     duration: `${2.8 + (i % 4) * 0.5}s`,
     size: `${3 + (i % 4) * 2}px`,
+    isMint: i % 3 === 0,
   }));
 
   return (
@@ -29,6 +29,9 @@ export const OpeningEnvelope = ({ isOpen, onOpen }) => {
       className={`envelope-screen ${isOpen ? 'opened' : ''}`}
       aria-label="Invitation Envelope Screen"
     >
+      {/* 5-Color Top Spectrum Ribbon */}
+      <div className="envelope-spectrum-ribbon" />
+
       {/* Outer Ornamental Frame */}
       <div className="envelope-frame-border" />
       <div className="envelope-frame-inner" />
@@ -39,12 +42,12 @@ export const OpeningEnvelope = ({ isOpen, onOpen }) => {
       <FloralCorner position="bottom-left" size={60} className="envelope-corner bottom-left" />
       <FloralCorner position="bottom-right" size={60} className="envelope-corner bottom-right" />
 
-      {/* Subtle Floating Gold Particles */}
+      {/* Floating Particles */}
       <div className="particles-container">
         {particles.map((p) => (
           <div
             key={p.id}
-            className="gold-particle"
+            className={p.isMint ? 'mint-particle' : 'gold-particle'}
             style={{
               left: p.left,
               width: p.size,
@@ -59,14 +62,14 @@ export const OpeningEnvelope = ({ isOpen, onOpen }) => {
       <div className="envelope-content">
         {/* Subtle Christian Cross */}
         <div style={{ marginBottom: 12 }}>
-          <GoldCross size={28} />
+          <GoldCross size={30} />
         </div>
 
         {/* Text Eyebrow */}
         <div className="envelope-eyebrow">
-          <span>✝</span>
+          <span>✦</span>
           <span>A Special Invitation</span>
-          <span>✝</span>
+          <span>✦</span>
         </div>
 
         {/* Heading */}
@@ -89,8 +92,9 @@ export const OpeningEnvelope = ({ isOpen, onOpen }) => {
 
             {/* Letter Inside */}
             <div className="letter-card">
+              <div className="letter-spectrum-strip" />
               <div className="letter-card-border" />
-              <div className="letter-monogram">✦✝✦</div>
+              <div className="letter-monogram">✦ ✝ ✦</div>
               <div className="letter-name">Halesh</div>
               <div className="letter-tag">Cradle Ceremony</div>
               <div className="letter-date">Sunday · 22 November 2026</div>
@@ -104,12 +108,12 @@ export const OpeningEnvelope = ({ isOpen, onOpen }) => {
 
             {/* Wax Seal with Christian Cross & Monogram */}
             <div className={`wax-seal-wrapper ${isAnimating ? 'animating' : ''}`}>
-              <WaxSeal size={84} onClick={handleOpen} />
+              <WaxSeal size={86} onClick={handleOpen} />
             </div>
           </div>
         </div>
 
-        {/* Action Button */}
+        {/* High-Resolution Action Button */}
         <button
           type="button"
           className="open-invite-btn"
@@ -128,4 +132,3 @@ export const OpeningEnvelope = ({ isOpen, onOpen }) => {
     </aside>
   );
 };
-

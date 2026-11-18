@@ -3,7 +3,6 @@ import { OrnateDivider, GoldCross } from './GoldOrnaments';
 import { Sparkles } from 'lucide-react';
 
 export const Countdown = () => {
-  // Target: Sunday, 22 November 2026 at 14:40:00 IST (+05:30)
   const targetTime = new Date('2026-11-22T14:40:00+05:30').getTime();
 
   const [timeLeft, setTimeLeft] = useState({
@@ -60,6 +59,9 @@ export const Countdown = () => {
     <section className="invitation-section dark" id="countdown">
       <div className="section-container">
         <div className="countdown-box">
+          {/* Top 5-Color Spectrum */}
+          <div className="hero-spectrum-top" />
+
           <div className="section-badge">
             <GoldCross size={16} />
             <span>Awaiting The Sacred Hour</span>
@@ -76,25 +78,26 @@ export const Countdown = () => {
 
           {timeLeft.isCelebration ? (
             <div style={{ padding: '24px 10px', textAlign: 'center' }}>
-              <div style={{ color: 'var(--gold-champagne)', marginBottom: 12 }}>
+              <div style={{ color: 'var(--palette-gold)', marginBottom: 12 }}>
                 <Sparkles size={40} style={{ margin: '0 auto' }} />
               </div>
               <h3
                 style={{
                   fontFamily: 'var(--font-heading)',
                   fontSize: 'clamp(24px, 5vw, 36px)',
-                  color: 'var(--ivory-warm)',
-                  fontStyle: 'italic',
+                  color: '#FFFFFF',
+                  fontWeight: 800,
                 }}
               >
                 The Cradle Ceremony Celebration Is Here!
               </h3>
               <p
                 style={{
-                  fontFamily: 'var(--font-editorial)',
+                  fontFamily: 'var(--font-body)',
                   fontSize: '18px',
                   color: '#D3C9B8',
                   marginTop: 8,
+                  fontWeight: 500,
                 }}
               >
                 May God shower His richest blessings upon little Halesh today and always.
@@ -121,4 +124,3 @@ export const Countdown = () => {
     </section>
   );
 };
-

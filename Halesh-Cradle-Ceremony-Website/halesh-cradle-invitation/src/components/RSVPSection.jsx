@@ -5,12 +5,11 @@ import { MessageSquare, Send, CheckCircle, Share2, Copy } from 'lucide-react';
 export const RSVPSection = ({ onAddBlessing }) => {
   const [guestName, setGuestName] = useState('');
   const [attendees, setAttendees] = useState('2');
-  const [attending, setAttending] = useState('yes'); // 'yes' or 'no'
+  const [attending, setAttending] = useState('yes');
   const [blessingMessage, setBlessingMessage] = useState('');
   const [copied, setCopied] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  // Confirmed family RSVP contact number from project files
   const familyWhatsappNumber = '917892447247';
 
   const constructMessage = () => {
@@ -44,7 +43,6 @@ export const RSVPSection = ({ onAddBlessing }) => {
     const encoded = encodeURIComponent(message);
     const waUrl = `https://wa.me/${familyWhatsappNumber}?text=${encoded}`;
 
-    // If user provided a blessing, add it to the local blessings wall
     if (blessingMessage.trim() && onAddBlessing) {
       onAddBlessing({
         name: guestName.trim(),
@@ -81,6 +79,9 @@ export const RSVPSection = ({ onAddBlessing }) => {
     <section className="invitation-section light" id="rsvp">
       <div className="section-container">
         <div className="rsvp-card">
+          {/* Top 5-Color Spectrum */}
+          <div className="hero-spectrum-top" />
+
           <div className="verse-inner-frame" />
           <FloralCorner position="top-left" size={54} className="envelope-corner top-left" />
           <FloralCorner position="top-right" size={54} className="envelope-corner top-right" />
@@ -193,12 +194,12 @@ export const RSVPSection = ({ onAddBlessing }) => {
                   gap: 6,
                   padding: '9px 18px',
                   borderRadius: 50,
-                  background: '#FFFDF9',
-                  border: '1px solid rgba(184, 150, 80, 0.4)',
+                  background: '#FFFFFF',
+                  border: '1px solid rgba(133, 172, 252, 0.5)',
                   fontSize: 12,
-                  fontFamily: 'var(--font-ceremony)',
-                  color: 'var(--emerald-deep)',
-                  fontWeight: 600,
+                  fontFamily: 'var(--font-heading)',
+                  color: 'var(--palette-purple)',
+                  fontWeight: 700,
                   cursor: 'pointer',
                 }}
               >
@@ -215,12 +216,12 @@ export const RSVPSection = ({ onAddBlessing }) => {
                   gap: 6,
                   padding: '9px 18px',
                   borderRadius: 50,
-                  background: '#FFFDF9',
-                  border: '1px solid rgba(184, 150, 80, 0.4)',
+                  background: '#FFFFFF',
+                  border: '1px solid rgba(133, 172, 252, 0.5)',
                   fontSize: 12,
-                  fontFamily: 'var(--font-ceremony)',
-                  color: 'var(--emerald-deep)',
-                  fontWeight: 600,
+                  fontFamily: 'var(--font-heading)',
+                  color: 'var(--palette-purple)',
+                  fontWeight: 700,
                   cursor: 'pointer',
                 }}
               >

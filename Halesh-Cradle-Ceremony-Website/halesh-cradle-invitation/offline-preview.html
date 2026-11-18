@@ -10,42 +10,62 @@
   <title>Halesh — Cradle Ceremony Invitation | 22 November 2026</title>
   <meta name="description" content="With grateful hearts and God's abundant blessings, you are cordially invited to celebrate the Cradle Ceremony of baby Halesh on Sunday, 22 November 2026 at Eden Garden Function Hall, Bidar." />
 
+  <!-- High-Resolution Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cinzel:wght@600;700;800&family=Great+Vibes&display=swap" rel="stylesheet" />
 
   <style>
-    /* Design Variables */
+    /* Exact Palette from Screenshot */
     :root {
+      --palette-blue: #85ACFC;
+      --palette-purple: #880EEA;
+      --palette-mint: #BEFFBD;
+      --palette-gold: #FFE64E;
+      --palette-red: #FF2800;
+
       --emerald-deep: #123B32;
-      --emerald-darkest: #0B241F;
+      --emerald-darkest: #0A221C;
       --emerald-muted: #1B4E43;
       --burgundy-deep: #641C35;
-      --gold-champagne: #D6B875;
-      --gold-antique: #B89650;
-      --gold-light: #F3E5AB;
-      --ivory-warm: #FFF9ED;
+
+      --gold-champagne: #FFE64E;
+      --gold-antique: #D6B875;
+      --ivory-warm: #FFFDF7;
       --cream-soft: #F5EEDC;
-      --charcoal-deep: #292522;
-      --charcoal-muted: #59524C;
+      --charcoal-deep: #1A1816;
+      --charcoal-muted: #4A453F;
+
+      --font-heading: 'Outfit', 'Inter', -apple-system, sans-serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-script: 'Great Vibes', cursive;
-      --font-ceremony: 'Cinzel', serif;
-      --font-heading: 'Playfair Display', Georgia, serif;
-      --font-editorial: 'Cormorant Garamond', Garamond, serif;
-      --font-body: 'Plus Jakarta Sans', sans-serif;
-      --grad-gold: linear-gradient(135deg, #F3E5AB 0%, #D6B875 40%, #B89650 75%, #8E6E2F 100%);
-      --grad-emerald-dark: linear-gradient(160deg, #17453B 0%, #123B32 50%, #0B241F 100%);
-      --grad-emerald-hero: radial-gradient(circle at 50% 20%, #1A4E42 0%, #123B32 60%, #09201B 100%);
-      --grad-ivory-card: linear-gradient(180deg, #FFFDF7 0%, #FFF9ED 60%, #F5EEDC 100%);
-      --shadow-card: 0 10px 30px -5px rgba(18, 59, 50, 0.08), 0 4px 12px rgba(184, 150, 80, 0.08);
+
+      --grad-palette-bar: linear-gradient(90deg, #85ACFC 0%, #880EEA 25%, #BEFFBD 50%, #FFE64E 75%, #FF2800 100%);
+      --grad-gold-bright: linear-gradient(135deg, #FFF9C4 0%, #FFE64E 40%, #D6B875 80%, #B89650 100%);
+      --grad-red-seal: radial-gradient(circle at 35% 30%, #FF2800 0%, #D01E00 45%, #880EEA 90%, #451224 100%);
+      --grad-emerald-dark: linear-gradient(160deg, #154238 0%, #123B32 50%, #0A221C 100%);
+      --grad-emerald-hero: radial-gradient(circle at 50% 20%, #1E5549 0%, #123B32 60%, #081B16 100%);
+      --grad-ivory-card: linear-gradient(180deg, #FFFFFF 0%, #FFFDF9 60%, #FAF5EC 100%);
+      --shadow-card: 0 10px 30px -5px rgba(18, 59, 50, 0.08), 0 4px 12px rgba(136, 14, 234, 0.06);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { background-color: var(--emerald-deep); color: var(--charcoal-deep); font-family: var(--font-body); overflow-x: hidden; line-height: 1.6; }
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+    body { background-color: var(--emerald-deep); color: var(--charcoal-deep); font-family: var(--font-body); overflow-x: hidden; line-height: 1.6; letter-spacing: -0.01em; }
     img { max-width: 100%; height: auto; display: block; }
     button { font-family: inherit; cursor: pointer; border: none; outline: none; }
     a { color: inherit; text-decoration: none; }
+
+    /* Spectrum Ribbons */
+    .spectrum-top {
+      position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: var(--grad-palette-bar); z-index: 10;
+    }
 
     /* OPENING ENVELOPE OVERLAY */
     .envelope-screen {
@@ -54,32 +74,32 @@
       padding: 24px 20px; overflow: hidden; transition: opacity 0.8s ease, visibility 0.8s;
     }
     .envelope-screen.opened { opacity: 0; visibility: hidden; pointer-events: none; }
-    .envelope-frame-border { position: absolute; inset: 18px; border: 1px solid rgba(214, 184, 117, 0.35); pointer-events: none; }
-    .envelope-frame-inner { position: absolute; inset: 24px; border: 1px dashed rgba(214, 184, 117, 0.22); pointer-events: none; }
+    .envelope-frame-border { position: absolute; inset: 18px; border: 1px solid rgba(255, 230, 78, 0.4); pointer-events: none; }
+    .envelope-frame-inner { position: absolute; inset: 24px; border: 1px dashed rgba(133, 172, 252, 0.35); pointer-events: none; }
     .envelope-content { position: relative; z-index: 5; display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 580px; width: 100%; }
-    .envelope-eyebrow { font-family: var(--font-ceremony); font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold-champagne); margin-bottom: 8px; font-weight: 600; }
-    .envelope-title { font-family: var(--font-heading); font-size: clamp(28px, 6vw, 42px); font-style: italic; color: var(--ivory-warm); margin-bottom: 6px; line-height: 1.2; }
-    .envelope-subtitle { font-family: var(--font-editorial); font-size: clamp(16px, 3.8vw, 20px); color: #E2DAC8; margin-bottom: 24px; max-width: 440px; }
+    .envelope-eyebrow { font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--palette-gold); margin-bottom: 8px; font-weight: 700; }
+    .envelope-title { font-family: var(--font-heading); font-size: clamp(32px, 6.5vw, 48px); font-weight: 800; color: #FFFFFF; margin-bottom: 8px; line-height: 1.15; }
+    .envelope-subtitle { font-family: var(--font-body); font-size: clamp(15px, 3.6vw, 18px); color: #E2DAC8; margin-bottom: 24px; max-width: 460px; font-weight: 500; }
 
     /* 3D Envelope */
     .envelope-wrapper { position: relative; width: min(92vw, 380px); height: 240px; perspective: 1200px; margin: 10px auto 26px; cursor: pointer; }
-    .envelope-body { position: absolute; inset: 0; background: linear-gradient(145deg, #184A3F 0%, #123B32 70%, #0D2C25 100%); border-radius: 10px; box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(214, 184, 117, 0.35); }
-    .envelope-foil-border { position: absolute; inset: 6px; border: 1px solid rgba(214, 184, 117, 0.4); border-radius: 7px; pointer-events: none; }
+    .envelope-body { position: absolute; inset: 0; background: linear-gradient(145deg, #184A3F 0%, #123B32 70%, #0D2C25 100%); border-radius: 12px; box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 230, 78, 0.4); }
+    .envelope-foil-border { position: absolute; inset: 6px; border: 1px solid rgba(255, 230, 78, 0.45); border-radius: 8px; pointer-events: none; }
     .letter-card {
       position: absolute; left: 6%; right: 6%; top: 8%; height: 88%;
-      background: linear-gradient(180deg, #FFFFFF 0%, #FFFDF7 60%, #F5EEDC 100%);
-      border-radius: 6px; padding: 20px 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25); border: 1px solid rgba(184, 150, 80, 0.4);
-      transition: transform 0.9s cubic-bezier(0.25, 0.8, 0.25, 1); z-index: 2;
+      background: linear-gradient(180deg, #FFFFFF 0%, #FFFDF9 60%, #FAF5EC 100%);
+      border-radius: 8px; padding: 20px 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3); border: 1px solid rgba(214, 184, 117, 0.5);
+      transition: transform 0.9s cubic-bezier(0.25, 0.8, 0.25, 1); z-index: 2; overflow: hidden;
     }
-    .letter-name { font-family: var(--font-script); font-size: clamp(34px, 8vw, 44px); color: var(--burgundy-deep); line-height: 1; }
-    .letter-tag { font-family: var(--font-ceremony); font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--emerald-muted); font-weight: 600; margin-top: 4px; }
-    .envelope-left-fold { position: absolute; inset: 0; background: linear-gradient(135deg, #144238, #0F332B); clip-path: polygon(0 0, 50% 50%, 0 100%); border-radius: 10px 0 0 10px; z-index: 3; }
-    .envelope-right-fold { position: absolute; inset: 0; background: linear-gradient(225deg, #144238, #0E3029); clip-path: polygon(100% 0, 50% 50%, 100% 100%); border-radius: 0 10px 10px 0; z-index: 3; }
-    .envelope-bottom-fold { position: absolute; inset: 0; background: linear-gradient(180deg, #17453B 0%, #10362E 100%); clip-path: polygon(0 100%, 50% 45%, 100% 100%); border-radius: 0 0 10px 10px; z-index: 4; }
+    .letter-name { font-family: var(--font-heading); font-size: clamp(32px, 7vw, 42px); font-weight: 800; color: var(--palette-purple); line-height: 1.1; }
+    .letter-tag { font-family: var(--font-heading); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--emerald-muted); font-weight: 700; margin-top: 4px; }
+    .envelope-left-fold { position: absolute; inset: 0; background: linear-gradient(135deg, #144238, #0F332B); clip-path: polygon(0 0, 50% 50%, 0 100%); border-radius: 12px 0 0 12px; z-index: 3; }
+    .envelope-right-fold { position: absolute; inset: 0; background: linear-gradient(225deg, #144238, #0E3029); clip-path: polygon(100% 0, 50% 50%, 100% 100%); border-radius: 0 12px 12px 0; z-index: 3; }
+    .envelope-bottom-fold { position: absolute; inset: 0; background: linear-gradient(180deg, #17453B 0%, #10362E 100%); clip-path: polygon(0 100%, 50% 45%, 100% 100%); border-radius: 0 0 12px 12px; z-index: 4; }
     .envelope-top-flap {
       position: absolute; inset: 0; background: linear-gradient(180deg, #1B5145 0%, #153E34 100%);
-      clip-path: polygon(0 0, 100% 0, 50% 54%); border-radius: 10px 10px 0 0;
+      clip-path: polygon(0 0, 100% 0, 50% 54%); border-radius: 12px 12px 0 0;
       transform-origin: top; transform-style: preserve-3d; transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); z-index: 5;
     }
     .wax-seal-wrapper { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 6; transition: transform 0.4s ease, opacity 0.4s ease; }
@@ -94,135 +114,123 @@
 
     .open-invite-btn {
       position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-      padding: 15px 36px; background: var(--grad-gold); color: var(--emerald-darkest);
-      font-family: var(--font-ceremony); font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
-      border-radius: 50px; border: 1px solid #FFF2C6; box-shadow: 0 8px 25px rgba(214, 184, 117, 0.4);
+      padding: 16px 38px; background: var(--grad-gold-bright); color: #123B32;
+      font-family: var(--font-heading); font-size: 13px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase;
+      border-radius: 50px; border: 1px solid #FFFDE7; box-shadow: 0 8px 25px rgba(255, 230, 78, 0.4);
       transition: all 0.3s;
     }
     .open-invite-btn:hover { transform: translateY(-2px) scale(1.03); }
 
-    /* Particles */
-    .gold-particle {
-      position: absolute; border-radius: 50%; background: radial-gradient(circle, #FFF9ED 10%, #D6B875 60%, transparent 100%);
-      box-shadow: 0 0 8px #D6B875; animation: floatParticle 4s infinite linear;
-    }
-    @keyframes floatParticle {
-      0% { transform: translateY(100vh) scale(0.3); opacity: 0; }
-      30% { opacity: 0.85; }
-      80% { opacity: 0.8; }
-      100% { transform: translateY(-10vh) scale(1.1); opacity: 0; }
-    }
-
     /* SECTIONS */
     .invitation-section { position: relative; padding: 85px 20px; overflow: hidden; }
-    .invitation-section.dark { background: var(--grad-emerald-dark); color: var(--ivory-warm); }
-    .invitation-section.light { background: linear-gradient(180deg, #FFFDF7 0%, #FFF9ED 50%, #F5EEDC 100%); color: var(--charcoal-deep); }
+    .invitation-section.dark { background: var(--grad-emerald-dark); color: #FFFFFF; }
+    .invitation-section.light { background: linear-gradient(180deg, #FFFFFF 0%, #FFFDF9 50%, #FAF5EC 100%); color: var(--charcoal-deep); }
     .section-container { max-width: 1040px; margin: 0 auto; position: relative; z-index: 2; }
-    .section-header { text-align: center; margin-bottom: 44px; }
-    .section-badge { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-ceremony); font-size: 11px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold-antique); font-weight: 700; margin-bottom: 10px; }
-    .section-badge.light-theme { color: var(--emerald-muted); }
-    .section-title { font-family: var(--font-heading); font-size: clamp(32px, 5.5vw, 46px); font-weight: 600; font-style: italic; line-height: 1.25; margin-bottom: 12px; }
-    .section-title.gold-accent { background: var(--grad-gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .section-title.dark-text { color: var(--emerald-deep); }
-    .section-subtitle { font-family: var(--font-editorial); font-size: clamp(17px, 3.2vw, 21px); color: var(--charcoal-muted); max-width: 600px; margin: 0 auto; font-style: italic; line-height: 1.6; }
+    .section-header { text-align: center; margin-bottom: 46px; }
+    .section-badge { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--palette-gold); font-weight: 700; margin-bottom: 10px; background: rgba(136, 14, 234, 0.2); padding: 6px 16px; border-radius: 50px; border: 1px solid rgba(255, 230, 78, 0.4); }
+    .section-badge.light-theme { color: var(--palette-purple); background: rgba(136, 14, 234, 0.08); border-color: rgba(136, 14, 234, 0.25); }
+    .section-title { font-family: var(--font-heading); font-size: clamp(32px, 5.5vw, 46px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.2; margin-bottom: 12px; }
+    .section-title.gold-accent { background: linear-gradient(135deg, #FFFFFF 0%, #FFE64E 60%, #D6B875 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .section-title.dark-text { color: #123B32; }
+    .section-subtitle { font-family: var(--font-body); font-size: clamp(16px, 3.2vw, 19px); color: var(--charcoal-muted); max-width: 620px; margin: 0 auto; line-height: 1.6; font-weight: 500; }
     .invitation-section.dark .section-subtitle { color: #D3C9B8; }
 
     /* Hero */
-    .hero-section { position: relative; min-height: 94vh; display: flex; align-items: center; justify-content: center; padding: 90px 20px 80px; background: var(--grad-emerald-hero); color: var(--ivory-warm); text-align: center; border-bottom: 2px solid rgba(214, 184, 117, 0.3); }
-    .hero-card { position: relative; max-width: 820px; width: 100%; padding: 55px 40px; background: rgba(14, 46, 39, 0.75); backdrop-filter: blur(8px); border-radius: 16px; border: 1px solid rgba(214, 184, 117, 0.45); box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.5); }
-    .hero-inner-border { position: absolute; inset: 12px; border: 1px dashed rgba(214, 184, 117, 0.3); border-radius: 10px; pointer-events: none; }
-    .hero-kicker { font-family: var(--font-ceremony); font-size: 12px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold-champagne); margin-bottom: 12px; font-weight: 600; }
-    .hero-main-name { font-family: var(--font-script); font-size: clamp(62px, 14vw, 108px); color: #FFFDF7; text-shadow: 0 4px 20px rgba(214, 184, 117, 0.45); line-height: 1.05; margin: 4px 0 10px; }
-    .hero-ceremony-label { display: inline-block; font-family: var(--font-ceremony); font-size: clamp(14px, 3.4vw, 20px); letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold-light); font-weight: 700; padding: 6px 20px; border-top: 1px solid rgba(214, 184, 117, 0.4); border-bottom: 1px solid rgba(214, 184, 117, 0.4); margin-bottom: 28px; }
+    .hero-section { position: relative; min-height: 94vh; display: flex; align-items: center; justify-content: center; padding: 100px 20px 80px; background: var(--grad-emerald-hero); color: #FFFFFF; text-align: center; border-bottom: 3px solid transparent; border-image: var(--grad-palette-bar) 1; }
+    .hero-card { position: relative; max-width: 840px; width: 100%; padding: 55px 40px; background: rgba(14, 46, 39, 0.82); backdrop-filter: blur(10px); border-radius: 20px; border: 1px solid rgba(255, 230, 78, 0.45); box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.6), 0 0 30px rgba(136, 14, 234, 0.25); overflow: hidden; }
+    .hero-kicker { font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--palette-gold); margin-bottom: 12px; font-weight: 700; }
+    .hero-main-name { font-family: var(--font-heading); font-size: clamp(54px, 12vw, 92px); font-weight: 900; letter-spacing: -0.03em; color: #FFFFFF; text-shadow: 0 4px 25px rgba(255, 230, 78, 0.5); line-height: 1.05; margin: 4px 0 10px; }
+    .hero-ceremony-label { display: inline-block; font-family: var(--font-heading); font-size: clamp(14px, 3.4vw, 19px); letter-spacing: 0.28em; text-transform: uppercase; color: var(--palette-gold); font-weight: 800; padding: 6px 24px; border-top: 1px solid rgba(255, 230, 78, 0.45); border-bottom: 1px solid rgba(255, 230, 78, 0.45); margin-bottom: 28px; }
 
     /* Baby Portrait */
     .hero-portrait-wrapper { position: relative; width: min(84vw, 290px); margin: 0 auto 32px; }
-    .hero-portrait-frame { position: relative; width: 100%; aspect-ratio: 4 / 5.2; border-radius: 140px 140px 24px 24px; padding: 9px; background: var(--grad-gold); box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5); cursor: pointer; transition: transform 0.4s ease; }
+    .hero-portrait-frame { position: relative; width: 100%; aspect-ratio: 4 / 5.2; border-radius: 140px 140px 24px 24px; padding: 9px; background: var(--grad-gold-bright); box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55), 0 0 25px rgba(255, 230, 78, 0.4); cursor: pointer; transition: transform 0.4s ease; }
     .hero-portrait-frame:hover { transform: translateY(-4px); }
-    .hero-portrait-inner { width: 100%; height: 100%; border-radius: 132px 132px 18px 18px; overflow: hidden; background-color: var(--cream-soft); }
+    .hero-portrait-inner { width: 100%; height: 100%; border-radius: 132px 132px 18px 18px; overflow: hidden; background-color: var(--cream-soft); border: 2px solid #FFFDF7; }
     .hero-portrait-img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
-    .hero-portrait-tag { position: absolute; bottom: -14px; left: 50%; transform: translateX(-50%); background: var(--burgundy-deep); color: #FFF9ED; border: 1px solid var(--gold-champagne); padding: 4px 18px; border-radius: 50px; font-family: var(--font-ceremony); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; white-space: nowrap; }
+    .hero-portrait-tag { position: absolute; bottom: -14px; left: 50%; transform: translateX(-50%); background: var(--palette-purple); color: #FFFFFF; border: 1px solid var(--palette-gold); padding: 5px 20px; border-radius: 50px; font-family: var(--font-heading); font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; white-space: nowrap; box-shadow: 0 4px 14px rgba(0,0,0,0.5); }
 
-    .hero-blessing-quote { font-family: var(--font-editorial); font-size: clamp(17px, 3.8vw, 22px); font-style: italic; max-width: 620px; margin: 18px auto 26px; line-height: 1.7; color: #F8F3E8; }
-    .hero-parents-hosting { margin-top: 18px; padding-top: 20px; border-top: 1px solid rgba(214, 184, 117, 0.25); }
-    .hero-host-names { font-family: var(--font-heading); font-size: clamp(20px, 4.2vw, 26px); color: var(--ivory-warm); font-weight: 600; }
-    .hero-grand-names { font-family: var(--font-editorial); font-size: clamp(15px, 3.4vw, 18px); color: #D3C9B8; margin-top: 6px; font-style: italic; }
-    .hero-date-pill { display: inline-flex; align-items: center; gap: 12px; background: rgba(214, 184, 117, 0.15); border: 1px solid var(--gold-champagne); padding: 10px 24px; border-radius: 50px; margin-top: 26px; font-family: var(--font-ceremony); font-size: clamp(12px, 2.8vw, 14px); color: var(--gold-light); letter-spacing: 0.12em; text-transform: uppercase; }
+    .hero-blessing-quote { font-family: var(--font-body); font-size: clamp(17px, 3.8vw, 21px); font-weight: 500; max-width: 640px; margin: 18px auto 26px; line-height: 1.7; color: #F8F3E8; }
+    .hero-parents-hosting { margin-top: 18px; padding-top: 20px; border-top: 1px solid rgba(255, 230, 78, 0.25); }
+    .hero-host-names { font-family: var(--font-heading); font-size: clamp(20px, 4.2vw, 26px); color: #FFFFFF; font-weight: 700; }
+    .hero-grand-names { font-family: var(--font-body); font-size: clamp(15px, 3.4vw, 17px); color: #D3C9B8; margin-top: 6px; font-weight: 500; }
+    .hero-date-pill { display: inline-flex; align-items: center; gap: 12px; background: rgba(136, 14, 234, 0.2); border: 1px solid var(--palette-gold); padding: 10px 24px; border-radius: 50px; margin-top: 26px; font-family: var(--font-heading); font-size: clamp(12px, 2.8vw, 14px); color: var(--palette-gold); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
     .hero-actions { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; margin-top: 30px; }
-    .hero-cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 26px; border-radius: 50px; font-family: var(--font-ceremony); font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; transition: all 0.3s; }
-    .hero-cta-btn.primary { background: var(--grad-gold); color: var(--emerald-darkest); box-shadow: 0 4px 18px rgba(214, 184, 117, 0.35); }
-    .hero-cta-btn.secondary { background: rgba(255, 249, 237, 0.1); color: var(--ivory-warm); border: 1px solid rgba(214, 184, 117, 0.6); }
+    .hero-cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 50px; font-family: var(--font-heading); font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.3s; }
+    .hero-cta-btn.primary { background: var(--grad-gold-bright); color: #123B32; box-shadow: 0 4px 18px rgba(255, 230, 78, 0.4); }
+    .hero-cta-btn.secondary { background: rgba(255, 255, 255, 0.1); color: #FFFFFF; border: 1px solid rgba(255, 230, 78, 0.6); }
 
     /* Cards */
-    .verse-card, .family-card, .rsvp-card { position: relative; max-width: 820px; margin: 0 auto; background: var(--grad-ivory-card); border: 1px solid rgba(184, 150, 80, 0.45); border-radius: 16px; padding: 55px 44px; text-align: center; box-shadow: var(--shadow-card); }
-    .verse-scripture { font-family: var(--font-heading); font-size: clamp(22px, 4.4vw, 32px); font-style: italic; color: var(--emerald-deep); line-height: 1.6; margin: 20px auto 16px; max-width: 680px; }
-    .verse-citation { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-ceremony); font-size: 13px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--burgundy-deep); font-weight: 700; }
+    .verse-card, .family-card, .rsvp-card { position: relative; max-width: 820px; margin: 0 auto; background: var(--grad-ivory-card); border: 1px solid rgba(214, 184, 117, 0.45); border-radius: 18px; padding: 55px 44px; text-align: center; box-shadow: var(--shadow-card); overflow: hidden; }
+    .verse-scripture { font-family: var(--font-heading); font-size: clamp(22px, 4.4vw, 32px); font-weight: 700; letter-spacing: -0.015em; color: #123B32; line-height: 1.5; margin: 20px auto 16px; max-width: 680px; }
+    .verse-citation { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--palette-purple); font-weight: 800; }
 
     /* Event Details Grid */
     .details-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-bottom: 40px; }
-    .detail-card { background: #FFFDF9; border: 1px solid rgba(184, 150, 80, 0.35); border-radius: 14px; padding: 34px 26px; text-align: center; box-shadow: var(--shadow-card); }
-    .detail-icon-circle { width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(145deg, #184A3F, #123B32); color: var(--gold-champagne); display: grid; place-items: center; margin: 0 auto 16px; font-size: 24px; border: 1px solid rgba(214, 184, 117, 0.4); }
-    .detail-title { font-family: var(--font-ceremony); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--burgundy-deep); font-weight: 700; margin-bottom: 8px; }
-    .detail-primary { font-family: var(--font-heading); font-size: 21px; color: var(--emerald-deep); font-weight: 600; margin-bottom: 6px; }
-    .detail-desc { font-family: var(--font-editorial); font-size: 15px; color: var(--charcoal-muted); }
+    .detail-card { background: #FFFFFF; border: 1px solid rgba(214, 184, 117, 0.35); border-radius: 16px; padding: 34px 26px; text-align: center; box-shadow: var(--shadow-card); }
+    .detail-icon-circle { width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(145deg, #184A3F, #123B32); color: var(--palette-gold); display: grid; place-items: center; margin: 0 auto 16px; font-size: 24px; border: 1px solid rgba(255, 230, 78, 0.45); }
+    .detail-title { font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--palette-purple); font-weight: 800; margin-bottom: 8px; }
+    .detail-primary { font-family: var(--font-heading); font-size: 20px; color: #123B32; font-weight: 700; margin-bottom: 6px; }
+    .detail-desc { font-family: var(--font-body); font-size: 14px; color: var(--charcoal-muted); font-weight: 500; }
 
     /* Clergy Container */
-    .clergy-container { background: #FFFDF9; border: 1px solid rgba(184, 150, 80, 0.35); border-radius: 14px; padding: 34px 26px; text-align: center; margin-top: 10px; }
+    .clergy-container { background: #FFFFFF; border: 1px solid rgba(214, 184, 117, 0.35); border-radius: 16px; padding: 34px 26px; text-align: center; margin-top: 10px; }
     .clergy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-top: 18px; }
-    .clergy-item { padding: 14px; border-radius: 8px; background: rgba(245, 238, 220, 0.4); border: 1px dashed rgba(184, 150, 80, 0.3); }
+    .clergy-item { padding: 18px; border-radius: 12px; background: rgba(245, 238, 220, 0.4); border: 1px solid rgba(133, 172, 252, 0.3); }
 
     /* Countdown */
-    .countdown-box { background: rgba(14, 46, 39, 0.85); border: 1px solid rgba(214, 184, 117, 0.45); border-radius: 16px; padding: 50px 30px; text-align: center; max-width: 860px; margin: 0 auto; }
+    .countdown-box { background: rgba(14, 46, 39, 0.88); border: 1px solid rgba(255, 230, 78, 0.45); border-radius: 20px; padding: 50px 30px; text-align: center; max-width: 860px; margin: 0 auto; overflow: hidden; position: relative; }
     .countdown-grid { display: flex; justify-content: center; align-items: center; gap: 16px; flex-wrap: wrap; margin: 30px 0 20px; }
-    .countdown-unit { min-width: 100px; padding: 20px 16px; background: linear-gradient(180deg, #184A3F, #10362E); border: 1px solid rgba(214, 184, 117, 0.45); border-radius: 12px; display: flex; flex-direction: column; align-items: center; }
-    .countdown-number { font-family: var(--font-heading); font-size: clamp(34px, 7vw, 48px); font-weight: 700; color: var(--gold-light); line-height: 1; }
-    .countdown-label { font-family: var(--font-ceremony); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #D3C9B8; margin-top: 8px; }
+    .countdown-unit { min-width: 104px; padding: 20px 16px; background: linear-gradient(180deg, #184A3F, #10362E); border: 1px solid rgba(255, 230, 78, 0.45); border-radius: 14px; display: flex; flex-direction: column; align-items: center; }
+    .countdown-number { font-family: var(--font-heading); font-size: clamp(36px, 7vw, 50px); font-weight: 900; color: var(--palette-gold); line-height: 1; letter-spacing: -0.02em; }
+    .countdown-label { font-family: var(--font-heading); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #D3C9B8; margin-top: 8px; font-weight: 700; }
 
     /* Gallery */
     .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-    .gallery-item { background: #FFFDF9; border: 1px solid rgba(184, 150, 80, 0.45); border-radius: 14px; padding: 16px; cursor: pointer; transition: transform 0.3s; }
+    .gallery-item { background: #FFFFFF; border: 1px solid rgba(214, 184, 117, 0.45); border-radius: 16px; padding: 16px; cursor: pointer; transition: transform 0.3s; }
     .gallery-item:hover { transform: translateY(-5px); }
-    .gallery-image-frame { width: 100%; aspect-ratio: 4 / 4.6; border-radius: 10px; overflow: hidden; background: var(--cream-soft); }
+    .gallery-image-frame { width: 100%; aspect-ratio: 4 / 4.6; border-radius: 12px; overflow: hidden; background: var(--cream-soft); }
     .gallery-image { width: 100%; height: 100%; object-fit: cover; }
 
     /* Venue */
-    .venue-card { background: rgba(14, 46, 39, 0.85); border: 1px solid rgba(214, 184, 117, 0.45); border-radius: 16px; padding: 50px 36px; color: var(--ivory-warm); }
+    .venue-card { background: rgba(14, 46, 39, 0.88); border: 1px solid rgba(255, 230, 78, 0.45); border-radius: 20px; padding: 50px 36px; color: #FFFFFF; overflow: hidden; }
     .venue-layout { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 36px; align-items: center; }
     @media (max-width: 768px) { .venue-layout { grid-template-columns: 1fr; } }
-    .venue-map-preview { width: 100%; height: 280px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(214, 184, 117, 0.4); }
+    .venue-map-preview { width: 100%; height: 280px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255, 230, 78, 0.4); }
 
     /* RSVP Form */
     .form-group { display: flex; flex-direction: column; gap: 8px; text-align: left; margin-bottom: 18px; }
-    .form-label { font-family: var(--font-ceremony); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--emerald-deep); font-weight: 700; }
-    .form-input, .form-select, .form-textarea { width: 100%; padding: 14px 16px; border-radius: 8px; border: 1px solid rgba(184, 150, 80, 0.4); background: #FFFFFF; font-size: 15px; }
-    .whatsapp-rsvp-btn { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 28px; border-radius: 50px; background: #25D366; color: #FFFFFF; font-family: var(--font-ceremony); font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35); }
+    .form-label { font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: #123B32; font-weight: 800; }
+    .form-input, .form-select, .form-textarea { width: 100%; padding: 14px 16px; border-radius: 10px; border: 1px solid rgba(214, 184, 117, 0.4); background: #FFFFFF; font-size: 15px; font-weight: 500; }
+    .whatsapp-rsvp-btn { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 28px; border-radius: 50px; background: #25D366; color: #FFFFFF; font-family: var(--font-heading); font-size: 13px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35); }
 
     /* Floating Audio Pill */
     .floating-audio-pill {
       position: fixed; bottom: 24px; right: 24px; z-index: 999; display: flex; align-items: center; gap: 10px;
-      padding: 10px 18px; background: rgba(18, 59, 50, 0.92); backdrop-filter: blur(8px);
-      border: 1px solid var(--gold-champagne); border-radius: 50px; color: var(--ivory-warm);
-      font-family: var(--font-ceremony); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer;
+      padding: 10px 18px; background: rgba(18, 59, 50, 0.94); backdrop-filter: blur(10px);
+      border: 1px solid var(--palette-gold); border-radius: 50px; color: #FFFFFF;
+      font-family: var(--font-heading); font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer;
     }
 
     /* Footer */
-    .invitation-footer { background: linear-gradient(180deg, #123B32 0%, #081E19 100%); color: var(--ivory-warm); padding: 70px 20px 50px; text-align: center; border-top: 1px solid rgba(214, 184, 117, 0.3); }
+    .invitation-footer { background: linear-gradient(180deg, #123B32 0%, #081E19 100%); color: #FFFFFF; padding: 70px 20px 50px; text-align: center; border-top: 3px solid transparent; border-image: var(--grad-palette-bar) 1; }
 
     /* Lightbox Modal */
-    .lightbox-backdrop { position: fixed; inset: 0; z-index: 10000; background: rgba(11, 36, 31, 0.94); backdrop-filter: blur(10px); display: flex; align-items: center; justify-content: center; padding: 30px 20px; }
+    .lightbox-backdrop { position: fixed; inset: 0; z-index: 10000; background: rgba(10, 34, 28, 0.95); backdrop-filter: blur(12px); display: flex; align-items: center; justify-content: center; padding: 30px 20px; }
     .lightbox-backdrop.hidden { display: none; }
-    .lightbox-img { max-height: 80vh; max-width: 90vw; border-radius: 12px; border: 2px solid var(--gold-champagne); }
+    .lightbox-img { max-height: 80vh; max-width: 90vw; border-radius: 14px; border: 2px solid var(--palette-gold); }
   </style>
 </head>
 <body>
 
   <!-- 1. OPENING ENVELOPE SCREEN -->
   <aside class="envelope-screen" id="envelopeScreen">
+    <div class="spectrum-top"></div>
     <div class="envelope-frame-border"></div>
     <div class="envelope-frame-inner"></div>
 
     <div class="envelope-content">
-      <div style="font-size: 32px; color: #D6B875; margin-bottom: 6px;">✝</div>
+      <div style="font-size: 32px; color: #FFE64E; margin-bottom: 6px;">✝</div>
       <div class="envelope-eyebrow">A Special Invitation</div>
       <h1 class="envelope-title">The Cradle Ceremony</h1>
       <p class="envelope-subtitle">You are cordially invited to celebrate a precious new beginning with our family</p>
@@ -231,19 +239,20 @@
         <div class="envelope-body">
           <div class="envelope-foil-border"></div>
           <div class="letter-card">
-            <div style="color: #B89650; font-size: 14px; margin-bottom: 4px;">✦ ✝ ✦</div>
+            <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--grad-palette-bar);"></div>
+            <div style="color: var(--palette-purple); font-size: 14px; font-weight: 800; margin-bottom: 4px;">✦ ✝ ✦</div>
             <div class="letter-name">Halesh</div>
             <div class="letter-tag">Cradle Ceremony</div>
-            <div style="font-family: var(--font-editorial); font-size: 13px; color: #7E766E; margin-top: 6px;">Sunday · 22 November 2026</div>
+            <div style="font-family: var(--font-body); font-size: 13px; color: #6E6860; margin-top: 6px; font-weight: 600;">Sunday · 22 November 2026</div>
           </div>
           <div class="envelope-left-fold"></div>
           <div class="envelope-right-fold"></div>
           <div class="envelope-bottom-fold"></div>
           <div class="envelope-top-flap"></div>
           <div class="wax-seal-wrapper" id="waxSealWrapper">
-            <button type="button" style="width: 80px; height: 80px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #7E2442, #641C35, #451224); border: 2px dashed #D6B875; color: #F3E5AB; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
-              <span style="font-size: 22px;">✝</span>
-              <span style="font-family: 'Cinzel', serif; font-size: 14px; font-weight: 700; margin-top: -2px;">H</span>
+            <button type="button" style="width: 82px; height: 82px; border-radius: 50%; background: var(--grad-red-seal); border: 2px dashed #FFE64E; color: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 18px rgba(0,0,0,0.6);">
+              <span style="font-size: 22px; color: #FFE64E;">✝</span>
+              <span style="font-family: 'Outfit', sans-serif; font-size: 16px; font-weight: 900; margin-top: -2px;">H</span>
             </button>
           </div>
         </div>
@@ -252,7 +261,7 @@
       <button type="button" class="open-invite-btn" id="openBtn">
         <span>✝ OPEN YOUR INVITATION ✝</span>
       </button>
-      <div style="font-family: var(--font-editorial); font-size: 14px; color: #E2DAC8; margin-top: 14px; font-style: italic;">Tap wax seal or button to unseal</div>
+      <div style="font-family: var(--font-body); font-size: 14px; color: #E2DAC8; margin-top: 14px; font-weight: 500;">Tap wax seal or button to unseal</div>
     </div>
   </aside>
 
@@ -261,8 +270,8 @@
     <!-- HERO SECTION -->
     <section class="hero-section" id="hero">
       <div class="hero-card">
-        <div class="hero-inner-border"></div>
-        <div style="font-size: 28px; color: #D6B875; margin-bottom: 8px;">🕊️ ✝ 🕊️</div>
+        <div class="spectrum-top"></div>
+        <div style="font-size: 28px; color: #FFE64E; margin-bottom: 8px;">🕊️ ✝ 🕊️</div>
         <div class="hero-kicker">A Sacred Celebration of Life &amp; Grace</div>
         <h1 class="hero-main-name">Halesh</h1>
         <div class="hero-ceremony-label">Cradle Ceremony</div>
@@ -281,7 +290,7 @@
         </blockquote>
 
         <div class="hero-parents-hosting">
-          <div style="font-family: var(--font-ceremony); font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold-champagne); margin-bottom: 6px;">Cordially Hosted By</div>
+          <div style="font-family: var(--font-heading); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--palette-gold); margin-bottom: 6px; font-weight: 700;">Cordially Hosted By</div>
           <div class="hero-host-names">Mrs. Muttamma &amp; Mr. Arjun Rao Halesh</div>
           <div class="hero-grand-names">Beloved Granddaughter of Mrs. Reshma &amp; Mr. Pradeep Halesh</div>
         </div>
@@ -303,7 +312,8 @@
     <section class="invitation-section light">
       <div class="section-container">
         <div class="verse-card">
-          <div style="font-size: 26px; color: #B89650; margin-bottom: 6px;">✝</div>
+          <div class="spectrum-top"></div>
+          <div style="font-size: 26px; color: var(--palette-purple); margin-bottom: 6px;">✝</div>
           <div class="section-badge light-theme">Holy Scripture</div>
           <blockquote class="verse-scripture">
             “Children are a heritage from the Lord, offspring a reward from him.”
@@ -349,21 +359,21 @@
         </div>
 
         <div class="clergy-container">
-          <div style="font-family: var(--font-ceremony); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--burgundy-deep); font-weight: 700;">
+          <div style="font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--palette-purple); font-weight: 800;">
             ✝ Prayer &amp; Pastoral Blessings Officiated By ✝
           </div>
           <div class="clergy-grid">
             <div class="clergy-item">
               <strong>Rev. R. L. David</strong>
-              <div style="font-size: 13px; color: var(--charcoal-muted); font-style: italic;">Messia Methodist Church, Gandhi Nagar Colony, Mailoor</div>
+              <div style="font-size: 13px; color: var(--charcoal-muted);">Messia Methodist Church, Gandhi Nagar Colony, Mailoor</div>
             </div>
             <div class="clergy-item">
               <strong>Rev. Samuel Sathyamithra</strong>
-              <div style="font-size: 13px; color: var(--charcoal-muted); font-style: italic;">Emmanuel Methodist Church, Star Colony, Mailoor</div>
+              <div style="font-size: 13px; color: var(--charcoal-muted);">Emmanuel Methodist Church, Star Colony, Mailoor</div>
             </div>
             <div class="clergy-item">
               <strong>Rev. Jayasheel</strong>
-              <div style="font-size: 13px; color: var(--charcoal-muted); font-style: italic;">Y.B. BFC Church, Masimad</div>
+              <div style="font-size: 13px; color: var(--charcoal-muted);">Y.B. BFC Church, Masimad</div>
             </div>
           </div>
         </div>
@@ -374,6 +384,7 @@
     <section class="invitation-section dark" id="countdown">
       <div class="section-container">
         <div class="countdown-box">
+          <div class="spectrum-top"></div>
           <div class="section-badge">✝ Awaiting The Sacred Hour ✝</div>
           <h2 class="section-title gold-accent">Counting Every Blessed Moment</h2>
           <div class="countdown-grid" id="timerGrid">
@@ -382,7 +393,7 @@
             <div class="countdown-unit"><span class="countdown-number" id="cdMinutes">--</span><span class="countdown-label">Minutes</span></div>
             <div class="countdown-unit"><span class="countdown-number" id="cdSeconds">--</span><span class="countdown-label">Seconds</span></div>
           </div>
-          <div style="font-family: var(--font-editorial); font-size: 16px; color: #D3C9B8; font-style: italic;">
+          <div style="font-family: var(--font-body); font-size: 15px; color: #D3C9B8; font-weight: 500;">
             Sunday, 22 November 2026 · 2:40 PM IST · Eden Garden Function Hall, Bidar
           </div>
         </div>
@@ -393,21 +404,22 @@
     <section class="invitation-section light">
       <div class="section-container">
         <div class="family-card">
+          <div class="spectrum-top"></div>
           <div class="section-badge light-theme">From Our Hearts</div>
           <h2 class="section-title dark-text">A Warm Invitation From Our Family</h2>
-          <blockquote style="font-family: var(--font-editorial); font-size: 22px; font-style: italic; color: var(--emerald-deep); margin: 20px 0;">
+          <blockquote style="font-family: var(--font-heading); font-size: 21px; font-weight: 600; color: #123B32; margin: 20px 0;">
             “Your presence will make our celebration even more special. We request the pleasure of your company with family and friends to bless our beloved child.”
           </blockquote>
-          <div style="margin-top: 24px; font-family: var(--font-heading); font-size: 20px; color: var(--emerald-deep);">
+          <div style="margin-top: 24px; font-family: var(--font-heading); font-size: 20px; font-weight: 700; color: #123B32;">
             Mrs. Muttamma &amp; Mr. Arjun Rao Halesh
           </div>
-          <div style="font-family: var(--font-editorial); font-size: 16px; color: var(--charcoal-muted); font-style: italic; margin-top: 4px;">
+          <div style="font-family: var(--font-body); font-size: 15px; color: var(--charcoal-muted); margin-top: 4px; font-weight: 500;">
             R/o. Masimad, Tq. Bhalki, Dist. Bidar
           </div>
-          <div style="margin-top: 20px; border-top: 1px dashed rgba(184, 150, 80, 0.4); padding-top: 16px;">
-            <div style="font-family: var(--font-ceremony); font-size: 11px; letter-spacing: 0.2em; color: var(--gold-antique); text-transform: uppercase;">With Best Compliments From</div>
-            <div style="font-family: var(--font-editorial); font-size: 18px; margin: 6px 0; font-style: italic;">Kum. Deepthi, Shreya, Rishita &amp; Mahima Rani</div>
-            <div style="font-family: var(--font-ceremony); font-size: 13px; color: var(--burgundy-deep); font-weight: 700; text-transform: uppercase;">ALL HALESH FAMILY, RELATIVES &amp; FRIENDS</div>
+          <div style="margin-top: 20px; border-top: 1px dashed rgba(214, 184, 117, 0.4); padding-top: 16px;">
+            <div style="font-family: var(--font-heading); font-size: 11px; letter-spacing: 0.2em; color: var(--palette-purple); text-transform: uppercase; font-weight: 800;">With Best Compliments From</div>
+            <div style="font-family: var(--font-body); font-size: 18px; margin: 6px 0; font-weight: 600;">Kum. Deepthi, Shreya, Rishita &amp; Mahima Rani</div>
+            <div style="font-family: var(--font-heading); font-size: 13px; color: var(--palette-red); font-weight: 800; text-transform: uppercase;">ALL HALESH FAMILY, RELATIVES &amp; FRIENDS</div>
           </div>
         </div>
       </div>
@@ -427,8 +439,8 @@
               <img src="public/halesh-baby.jpg" alt="Baby Halesh" class="gallery-image" onerror="this.src='halesh-baby.jpg'" />
             </div>
             <div style="text-align: center; margin-top: 12px;">
-              <h3 style="font-family: var(--font-heading); font-size: 18px; color: var(--emerald-deep);">Our Precious Blessing — Baby Halesh</h3>
-              <p style="font-family: var(--font-editorial); font-size: 14px; color: var(--charcoal-muted); font-style: italic;">The little joy who fills our family with pure smiles</p>
+              <h3 style="font-family: var(--font-heading); font-size: 18px; font-weight: 700; color: #123B32;">Our Precious Blessing — Baby Halesh</h3>
+              <p style="font-family: var(--font-body); font-size: 14px; color: var(--charcoal-muted); font-weight: 500;">The little joy who fills our family with pure smiles</p>
             </div>
           </div>
           <div class="gallery-item" id="galleryItem2">
@@ -436,8 +448,8 @@
               <img src="public/invitation-card.jpg" alt="Original Card Keepsake" class="gallery-image" onerror="this.src='invitation-card.jpg'" />
             </div>
             <div style="text-align: center; margin-top: 12px;">
-              <h3 style="font-family: var(--font-heading); font-size: 18px; color: var(--emerald-deep);">The Family Invitation Keepsake</h3>
-              <p style="font-family: var(--font-editorial); font-size: 14px; color: var(--charcoal-muted); font-style: italic;">Original printed invitation blessed by Methodist church clergy</p>
+              <h3 style="font-family: var(--font-heading); font-size: 18px; font-weight: 700; color: #123B32;">The Family Invitation Keepsake</h3>
+              <p style="font-family: var(--font-body); font-size: 14px; color: var(--charcoal-muted); font-weight: 500;">Original printed invitation blessed by Methodist church clergy</p>
             </div>
           </div>
         </div>
@@ -453,13 +465,14 @@
         </header>
 
         <div class="venue-card">
+          <div class="spectrum-top"></div>
           <div class="venue-layout">
             <div>
-              <h3 style="font-family: var(--font-heading); font-size: 28px; color: var(--gold-light); margin-bottom: 10px;">Eden Garden Function Hall</h3>
-              <p style="font-family: var(--font-editorial); font-size: 19px; color: #E6DECD; line-height: 1.6; margin-bottom: 16px;">
+              <h3 style="font-family: var(--font-heading); font-size: 28px; font-weight: 800; color: var(--palette-gold); margin-bottom: 10px;">Eden Garden Function Hall</h3>
+              <p style="font-family: var(--font-body); font-size: 18px; color: #E6DECD; line-height: 1.6; margin-bottom: 16px; font-weight: 500;">
                 Mailoor, Near GND College,<br>Bidar, Karnataka — 585403
               </p>
-              <div style="background: rgba(214, 184, 117, 0.15); border: 1px solid rgba(214, 184, 117, 0.35); padding: 8px 14px; border-radius: 8px; font-size: 13px; color: var(--gold-champagne); margin-bottom: 24px;">
+              <div style="background: rgba(133, 172, 252, 0.15); border: 1px solid rgba(133, 172, 252, 0.4); padding: 8px 14px; border-radius: 8px; font-size: 13px; color: var(--palette-blue); margin-bottom: 24px; font-weight: 600;">
                 📍 Landmark: Near Guru Nanak Dev (GND) Engineering College
               </div>
               <a href="https://www.google.com/maps/search/?api=1&query=Eden+Garden+Function+Hall+Mailoor+Near+GND+College+Bidar+Karnataka" target="_blank" rel="noopener noreferrer" class="hero-cta-btn primary">
@@ -478,6 +491,7 @@
     <section class="invitation-section light" id="rsvp">
       <div class="section-container">
         <div class="rsvp-card">
+          <div class="spectrum-top"></div>
           <header class="section-header" style="margin-bottom: 20px;">
             <div class="section-badge light-theme">RSVP Confirmation</div>
             <h2 class="section-title dark-text">We Would Be Delighted to Have You With Us</h2>
@@ -517,13 +531,13 @@
 
   <!-- FOOTER -->
   <footer class="invitation-footer">
-    <div style="font-size: 24px; color: #D6B875; margin-bottom: 10px;">🕊️ ✝ 🕊️</div>
-    <h3 style="font-family: var(--font-script); font-size: 44px; color: var(--gold-light);">With Love, Prayers &amp; Blessings</h3>
-    <p style="font-family: var(--font-heading); font-size: 20px; font-style: italic; margin-bottom: 12px;">“Thank you for being a part of our special day.”</p>
-    <div style="font-family: var(--font-ceremony); font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: #D3C9B8;">
+    <div style="font-size: 24px; color: #FFE64E; margin-bottom: 10px;">🕊️ ✝ 🕊️</div>
+    <h3 style="font-family: var(--font-heading); font-size: 42px; font-weight: 800; color: var(--palette-gold);">With Love, Prayers &amp; Blessings</h3>
+    <p style="font-family: var(--font-heading); font-size: 20px; font-weight: 600; margin-bottom: 12px;">“Thank you for being a part of our special day.”</p>
+    <div style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: #D3C9B8; font-weight: 700;">
       Mrs. Muttamma &amp; Mr. Arjun Rao Halesh
     </div>
-    <div style="margin-top: 30px; font-size: 11px; color: rgba(214, 184, 117, 0.6); letter-spacing: 0.1em;">
+    <div style="margin-top: 30px; font-size: 11px; color: rgba(255, 230, 78, 0.7); letter-spacing: 0.1em; font-weight: 600;">
       HALESH CRADLE CEREMONY · 22 NOVEMBER 2026 · BIDAR, KARNATAKA
     </div>
   </footer>
@@ -564,7 +578,7 @@
       const now = Date.now();
       const diff = target - now;
       if (diff <= 0) {
-        document.getElementById('timerGrid').innerHTML = '<div style="font-size: 24px; color: #F3E5AB; font-style: italic;">The Cradle Ceremony Celebration Has Begun!</div>';
+        document.getElementById('timerGrid').innerHTML = '<div style="font-size: 24px; color: #FFE64E; font-weight: 700;">The Cradle Ceremony Celebration Has Begun!</div>';
         return;
       }
       const d = Math.floor(diff / 86400000);
@@ -644,4 +658,3 @@
   </script>
 </body>
 </html>
-
