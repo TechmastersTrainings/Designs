@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="emeraldGrad" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#1B5246" />
+      <stop offset="50%" stop-color="#123B32" />
+      <stop offset="100%" stop-color="#0A221C" />
+    </radialGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F3E5AB" />
+      <stop offset="40%" stop-color="#D6B875" />
+      <stop offset="70%" stop-color="#B89650" />
+      <stop offset="100%" stop-color="#8C6E2D" />
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="30" fill="url(#emeraldGrad)" stroke="url(#goldGrad)" stroke-width="2" />
+  <circle cx="32" cy="32" r="26" fill="none" stroke="url(#goldGrad)" stroke-width="0.75" stroke-dasharray="2,2" />
+  <!-- Elegant Gold Cross -->
+  <path d="M 32 14 L 32 50 M 20 25 L 44 25" stroke="url(#goldGrad)" stroke-width="3" stroke-linecap="round" />
+  <circle cx="32" cy="25" r="2" fill="#FFF9ED" />
+  <!-- Small floral dots -->
+  <circle cx="32" cy="13" r="1.5" fill="url(#goldGrad)" />
+  <circle cx="32" cy="51" r="1.5" fill="url(#goldGrad)" />
+  <circle cx="19" cy="25" r="1.5" fill="url(#goldGrad)" />
+  <circle cx="45" cy="25" r="1.5" fill="url(#goldGrad)" />
+</svg>
+
