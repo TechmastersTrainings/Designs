@@ -13,7 +13,7 @@
   <!-- High-Resolution Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Great+Vibes&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+Kannada:wght@400;600;700;800&family=Great+Vibes&display=swap" rel="stylesheet" />
 
   <style>
     /* Exact Palette from Screenshot (NO GREEN BACKGROUND) */
@@ -218,6 +218,29 @@
     .lightbox-backdrop { position: fixed; inset: 0; z-index: 10000; background: rgba(16, 1, 28, 0.96); backdrop-filter: blur(14px); display: flex; align-items: center; justify-content: center; padding: 30px 20px; }
     .lightbox-backdrop.hidden { display: none; }
     .lightbox-img { max-height: 80vh; max-width: 90vw; border-radius: 14px; border: 2px solid var(--palette-gold); }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 600px) {
+      .section-container { padding: 0 16px; }
+      .hero-card, .verse-card, .family-card, .venue-card { padding: 30px 16px; border-radius: 16px; }
+      .hero-portrait-frame { width: min(84vw, 280px); height: min(108vw, 350px); }
+      .hero-main-name { font-size: clamp(40px, 12vw, 64px); }
+      .hero-actions { flex-direction: column; width: 100%; }
+      .hero-cta-btn { width: 100%; justify-content: center; }
+      .countdown-grid { gap: 8px; }
+      .countdown-unit { min-width: 65px; padding: 12px 6px; }
+      .countdown-number { font-size: 26px; }
+      .countdown-label { font-size: 10px; }
+      .clergy-container { padding: 24px 14px; }
+      .clergy-grid { grid-template-columns: 1fr; gap: 14px; }
+      .floating-audio-pill { bottom: 16px; right: 16px; padding: 8px 12px; }
+    }
+    @media (max-width: 480px) {
+      .envelope-wrapper { width: min(88vw, 330px); height: 195px; margin: 6px auto 18px; }
+      .envelope-title { font-size: clamp(28px, 7.5vw, 38px); }
+      .envelope-subtitle { font-size: 13.5px; margin-bottom: 16px; }
+      .open-invite-btn { padding: 13px 26px; font-size: 11.5px; }
+    }
   </style>
 </head>
 <body>
@@ -301,8 +324,8 @@
         </div>
 
         <div class="hero-actions">
-          <a href="#venue" class="hero-cta-btn secondary">📍 View Venue</a>
-          <a href="#rsvp" class="hero-cta-btn primary">💬 Confirm RSVP</a>
+          <a href="#event-details" class="hero-cta-btn secondary">⏰ Ceremony Schedule</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Eden+Garden+Function+Hall+Mailoor+Near+GND+College+Bidar+Karnataka" target="_blank" rel="noopener noreferrer" class="hero-cta-btn primary">🗺️ View Venue &amp; Map</a>
         </div>
       </div>
     </section>
@@ -313,47 +336,82 @@
         <div class="verse-card">
           <div class="spectrum-top"></div>
           <div style="font-size: 26px; color: var(--palette-purple); margin-bottom: 6px;">✝</div>
-          <div class="section-badge light-theme">Holy Scripture</div>
+          <div class="section-badge light-theme">Holy Scripture · ಪವಿತ್ರ ವಾಕ್ಯ</div>
           <blockquote class="verse-scripture">
             “Children are a heritage from the Lord, offspring a reward from him.”
           </blockquote>
-          <div class="verse-citation">✦ Psalm 127:3 ✦</div>
+          <div class="verse-citation">✦ Psalm 127:3 · ಕೀರ್ತನೆಗಳು ೧೨೭:೩ ✦</div>
+          
+          <!-- Kannada Translation Below Psalm -->
+          <div style="margin-top: 18px; padding: 16px 20px; background: rgba(136, 14, 234, 0.05); border: 1px solid rgba(255, 230, 78, 0.6); border-radius: 12px; text-align: center;">
+            <p style="font-family: 'Noto Sans Kannada', 'Segoe UI', sans-serif; font-size: clamp(16px, 4.2vw, 20px); line-height: 1.8; color: var(--palette-purple); font-weight: 700; margin-bottom: 8px;">
+              “ಪ್ರತಿಯೊಂದು ಮಗುವು ದೇವರ ಪ್ರೀತಿ ಮತ್ತು ಕೃಪೆಯ ಪವಿತ್ರ ವಾಗ್ದಾನವಾಗಿದೆ. ನಮ್ಮ ಮುದ್ದಾದ ಕಂದ ಹಾಲೇಶ್‌ಗೆ ನಿಮ್ಮ ಪ್ರಾರ್ಥನೆ, ಆಶೀರ್ವಾದ ಮತ್ತು ಕೃತಜ್ಞತೆಗಳನ್ನು ಸಲ್ಲಿಸಲು ನಮ್ಮೊಂದಿಗೆ ಜೊತೆಯಾಗಿ.”
+            </p>
+            <p style="font-family: var(--font-body); font-size: 14px; color: var(--charcoal-muted); font-style: italic;">
+              “Every child is a sacred promise of heaven's love and grace. Join us in surrounding our sweet baby Halesh with prayers, blessings, and thanksgiving.”
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- EVENT DETAILS -->
+    <!-- EVENT DETAILS (2 COMPREHENSIVE CARDS) -->
     <section class="invitation-section light" id="event-details">
       <div class="section-container">
         <header class="section-header">
           <div class="section-badge light-theme">The Holy Celebration</div>
           <h2 class="section-title dark-text">Program &amp; Schedule</h2>
+          <p class="section-subtitle">An auspicious day of joy, prayer and thanksgiving in the presence of God.</p>
         </header>
 
-        <div class="details-grid">
-          <div class="detail-card">
-            <div class="detail-icon-circle">📅</div>
-            <div class="detail-title">Sacred Date</div>
-            <h3 class="detail-primary">Sunday, 22 Nov 2026</h3>
-            <p class="detail-desc">An auspicious day of joy, prayer and thanksgiving in the presence of God.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 24px; margin-bottom: 34px;">
+          <!-- CARD 1: CEREMONY & FELLOWSHIP SCHEDULE -->
+          <div class="detail-card" style="text-align: left; align-items: stretch; padding: 26px 22px;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+              <div class="detail-icon-circle" style="margin-bottom: 0; width: 44px; height: 44px; font-size: 20px;">📅</div>
+              <div>
+                <div class="detail-title" style="margin-bottom: 2px;">Auspicious Schedule</div>
+                <h3 class="detail-primary" style="font-size: 18px; margin-bottom: 0;">Sunday, 22 November 2026</h3>
+              </div>
+            </div>
+            <p style="font-size: 14px; color: var(--charcoal-muted); font-style: italic; margin-bottom: 16px; border-bottom: 1px solid rgba(255, 230, 78, 0.5); padding-bottom: 12px;">
+              An auspicious day of joy, prayer and thanksgiving in the presence of God.
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 14px;">
+              <div>
+                <div style="font-family: var(--font-heading); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--palette-blue); font-weight: 700;">Ceremony Time</div>
+                <div style="font-family: var(--font-heading); font-size: 19px; font-weight: 800; color: var(--palette-purple); margin: 2px 0 4px;">2:40 PM Onwards</div>
+                <p style="font-size: 13.5px; color: var(--charcoal-muted); line-height: 1.45;">Holy cradle blessing, sacred hymns, dedication prayers and fellowship.</p>
+              </div>
+              <div style="border-top: 1px dashed rgba(136, 14, 234, 0.2); padding-top: 12px;">
+                <div style="font-family: var(--font-heading); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--palette-blue); font-weight: 700;">Fellowship Lunch</div>
+                <div style="font-family: var(--font-heading); font-size: 19px; font-weight: 800; color: var(--palette-purple); margin: 2px 0 4px;">2:00 PM Onwards</div>
+                <p style="font-size: 13.5px; color: var(--charcoal-muted); line-height: 1.45;">Please join us beforehand to share in a delightful festive meal with our family.</p>
+              </div>
+            </div>
           </div>
-          <div class="detail-card">
-            <div class="detail-icon-circle">⏰</div>
-            <div class="detail-title">Ceremony Time</div>
-            <h3 class="detail-primary">2:40 PM Onwards</h3>
-            <p class="detail-desc">Holy cradle blessing, sacred hymns, dedication prayers and fellowship.</p>
-          </div>
-          <div class="detail-card">
-            <div class="detail-icon-circle">🍲</div>
-            <div class="detail-title">Fellowship Lunch</div>
-            <h3 class="detail-primary">2:00 PM Onwards</h3>
-            <p class="detail-desc">Please join us beforehand to share in a delightful festive meal with our family.</p>
-          </div>
-          <div class="detail-card">
-            <div class="detail-icon-circle">📍</div>
-            <div class="detail-title">Celebration Venue</div>
-            <h3 class="detail-primary">Eden Garden Function Hall</h3>
-            <p class="detail-desc">Mailoor, Near GND College, Bidar, Karnataka.</p>
+
+          <!-- CARD 2: CELEBRATION VENUE -->
+          <div class="detail-card" style="text-align: left; align-items: stretch; padding: 26px 22px;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+              <div class="detail-icon-circle" style="margin-bottom: 0; width: 44px; height: 44px; font-size: 20px;">📍</div>
+              <div>
+                <div class="detail-title" style="margin-bottom: 2px;">Celebration Destination</div>
+                <h3 class="detail-primary" style="font-size: 18px; margin-bottom: 0;">Celebration Venue</h3>
+              </div>
+            </div>
+            <div style="background: rgba(136, 14, 234, 0.05); border-radius: 10px; padding: 14px; margin-bottom: 14px; border: 1px solid rgba(136, 14, 234, 0.15);">
+              <h4 style="font-family: var(--font-heading); font-size: 19px; font-weight: 800; color: var(--palette-purple); margin-bottom: 4px;">Eden Garden Function Hall</h4>
+              <p style="font-size: 14px; color: var(--charcoal-deep); line-height: 1.5; font-weight: 500;">
+                Mailoor, Near GND College, Bidar, Karnataka. Valet and guest parking available.
+              </p>
+            </div>
+            <div style="height: 140px; border-radius: 8px; overflow: hidden; margin-bottom: 14px; border: 1px solid rgba(255, 230, 78, 0.5);">
+              <iframe title="Map Preview" style="width: 100%; height: 100%; border: 0;" src="https://maps.google.com/maps?q=Eden+Garden+Function+Hall+Mailoor+Bidar+Karnataka&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Eden+Garden+Function+Hall+Mailoor+Near+GND+College+Bidar+Karnataka" target="_blank" rel="noopener noreferrer" class="hero-cta-btn primary" style="width: 100%; text-align: center; justify-content: center; padding: 12px 18px; font-size: 12.5px;">
+              🗺️ Get Directions on Google Maps
+            </a>
           </div>
         </div>
 
@@ -485,47 +543,6 @@
         </div>
       </div>
     </section>
-
-    <!-- RSVP SECTION -->
-    <section class="invitation-section light" id="rsvp">
-      <div class="section-container">
-        <div class="rsvp-card">
-          <div class="spectrum-top"></div>
-          <header class="section-header" style="margin-bottom: 20px;">
-            <div class="section-badge light-theme">RSVP Confirmation</div>
-            <h2 class="section-title dark-text">We Would Be Delighted to Have You With Us</h2>
-            <p class="section-subtitle">Confirm your gracious presence directly with the family via WhatsApp.</p>
-          </header>
-
-          <form id="rsvpForm">
-            <div class="form-group">
-              <label class="form-label" for="guestName">Your Full Name / Family Name *</label>
-              <input type="text" id="guestName" class="form-input" placeholder="e.g. Mr. &amp; Mrs. Joseph / David Family" required />
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="attendeesCount">Number of Attendees</label>
-              <select id="attendeesCount" class="form-select">
-                <option value="1">1 Person</option>
-                <option value="2" selected>2 People (Couple)</option>
-                <option value="3">3 People</option>
-                <option value="4">4 People</option>
-                <option value="5+">5+ People (Family Group)</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="blessingMsg">A Prayer or Blessing for Baby Halesh (Optional)</label>
-              <textarea id="blessingMsg" class="form-textarea" rows="3" placeholder="May God bless little Halesh with good health, long life, and divine joy..."></textarea>
-            </div>
-
-            <button type="submit" class="whatsapp-rsvp-btn">
-              💬 Send RSVP via WhatsApp (+91 7892447247)
-            </button>
-          </form>
-        </div>
-      </div>
-    </section>
   </main>
 
   <!-- FOOTER -->
@@ -542,13 +559,13 @@
   </footer>
 
   <!-- FLOATING CELEBRATION AUDIO PILL -->
-  <button type="button" class="floating-audio-pill" id="musicBtn" title="Play celebration music">
-    <div class="audio-soundwave" style="display:inline-flex; align-items:flex-end; gap:2.5px; height:14px; margin-right:6px;">
+  <button type="button" class="floating-audio-pill" id="musicBtn" title="Toggle celebration music">
+    <div class="audio-soundwave" style="display:inline-flex; align-items:flex-end; gap:2.5px; height:14px;">
       <span class="audio-bar" style="width:3px; background:#FFE64E; border-radius:2px; height:6px;"></span>
-      <span class="audio-bar" style="width:3px; background:#FFE64E; border-radius:2px; height:10px;"></span>
-      <span class="audio-bar" style="width:3px; background:#FFE64E; border-radius:2px; height:6px;"></span>
+      <span class="audio-bar" style="width:3px; background:#FFE64E; border-radius:2px; height:12px;"></span>
+      <span class="audio-bar" style="width:3px; background:#FFE64E; border-radius:2px; height:8px;"></span>
     </div>
-    <span id="musicBtnText">Play Music</span>
+    <span id="musicBtnIcon" style="font-size:16px;">🔊</span>
   </button>
   <audio id="bgMusic" src="public/music.mp3" loop preload="auto"></audio>
 
@@ -574,7 +591,6 @@
         bgAudio.play().then(() => {
           isPlaying = true;
           musicBtn.classList.add('playing');
-          musicBtnText.textContent = 'Music Playing';
         }).catch(() => {});
       }
       setTimeout(() => {
@@ -605,18 +621,6 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
-    // RSVP WhatsApp Integration
-    document.getElementById('rsvpForm').addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('guestName').value.trim();
-      const count = document.getElementById('attendeesCount').value;
-      const msg = document.getElementById('blessingMsg').value.trim();
-      let text = `✦ *RSVP: Halesh's Cradle Ceremony* ✦\n\n*Guest Name:* ${name}\n*Attendance:* Joyfully Attending with ${count} guest(s)\n*Date:* Sunday, 22 November 2026 (2:40 PM)\n*Venue:* Eden Garden Function Hall, Bidar\n`;
-      if (msg) text += `\n*Blessing for Baby Halesh:* "${msg}"\n`;
-      text += `\n_With warm regards and God's blessings!_`;
-      window.open(`https://wa.me/917892447247?text=${encodeURIComponent(text)}`, '_blank');
-    });
-
     // Lightbox
     const modal = document.getElementById('lightboxModal');
     const modalImg = document.getElementById('lightboxImg');
@@ -633,7 +637,6 @@
     // Background Audio Controller (Using Provided Celebration Music)
     const bgAudio = document.getElementById('bgMusic');
     const musicBtn = document.getElementById('musicBtn');
-    const musicBtnText = document.getElementById('musicBtnText');
     let isPlaying = false;
 
     function toggleAudio() {
@@ -641,12 +644,10 @@
         bgAudio.pause();
         isPlaying = false;
         musicBtn.classList.remove('playing');
-        musicBtnText.textContent = 'Play Music';
       } else {
         bgAudio.play().then(() => {
           isPlaying = true;
           musicBtn.classList.add('playing');
-          musicBtnText.textContent = 'Music Playing';
         }).catch(e => console.log('Playback waiting for interaction:', e));
       }
     }
@@ -655,12 +656,10 @@
     bgAudio.addEventListener('pause', () => {
       isPlaying = false;
       musicBtn.classList.remove('playing');
-      musicBtnText.textContent = 'Play Music';
     });
     bgAudio.addEventListener('play', () => {
       isPlaying = true;
       musicBtn.classList.add('playing');
-      musicBtnText.textContent = 'Music Playing';
     });
   </script>
 </body>

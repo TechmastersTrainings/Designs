@@ -362,14 +362,55 @@
 }
 
 @media (max-width: 480px) {
+  .envelope-screen {
+    padding: 16px 12px;
+  }
+  .envelope-eyebrow {
+    font-size: 11px;
+    margin-bottom: 4px;
+  }
+  .envelope-title {
+    font-size: clamp(28px, 7.5vw, 38px);
+    margin-bottom: 4px;
+  }
+  .envelope-subtitle {
+    font-size: 13.5px;
+    margin-bottom: 16px;
+  }
   .envelope-wrapper {
-    height: 210px;
+    width: min(88vw, 330px);
+    height: 195px;
+    margin: 6px auto 18px;
   }
   .envelope-wrapper.is-opening .letter-card {
-    transform: translateY(-90px);
+    transform: translateY(-80px);
+  }
+  .letter-name {
+    font-size: 28px;
+  }
+  .letter-tag {
+    font-size: 9.5px;
+  }
+  .letter-date {
+    font-size: 10px;
   }
   .open-invite-btn {
-    padding: 14px 28px;
+    padding: 13px 26px;
+    font-size: 11.5px;
+    letter-spacing: 0.12em;
+  }
+  .envelope-hint {
     font-size: 12px;
+    margin-top: 8px;
+  }
+}
+
+@media (max-height: 700px) and (max-width: 480px) {
+  .envelope-subtitle {
+    display: none;
+  }
+  .envelope-wrapper {
+    height: 180px;
+    margin: 4px auto 14px;
   }
 }

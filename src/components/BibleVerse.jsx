@@ -20,7 +20,7 @@ export const BibleVerse = () => {
           </div>
 
           <div className="section-badge light-theme">
-            <span>Holy Scripture</span>
+            <span>Holy Scripture · ಪವಿತ್ರ ವಾಕ್ಯ</span>
           </div>
 
           {/* Sacred Scripture Text */}
@@ -30,18 +30,23 @@ export const BibleVerse = () => {
 
           <div className="verse-citation">
             <span>✦</span>
-            <span>Psalm 127:3</span>
+            <span>Psalm 127:3 · ಕೀರ್ತನೆಗಳು ೧೨೭:೩</span>
             <span>✦</span>
           </div>
 
           <OrnateDivider maxWidth={320} />
 
-          <p className="verse-reflection">
-            Every child is a sacred promise of heaven's love and grace. Join us in surrounding our sweet baby Halesh with prayers, blessings, and thanksgiving.
-          </p>
+          {/* Kannada Translation as Requested */}
+          <div className="kannada-verse-block">
+            <p className="verse-kannada-text">
+              “ಪ್ರತಿಯೊಂದು ಮಗುವು ದೇವರ ಪ್ರೀತಿ ಮತ್ತು ಕೃಪೆಯ ಪವಿತ್ರ ವಾಗ್ದಾನವಾಗಿದೆ. ನಮ್ಮ ಮುದ್ದಾದ ಕಂದ ಹಾಲೇಶ್‌ಗೆ ನಿಮ್ಮ ಪ್ರಾರ್ಥನೆ, ಆಶೀರ್ವಾದ ಮತ್ತು ಕೃತಜ್ಞತೆಗಳನ್ನು ಸಲ್ಲಿಸಲು ನಮ್ಮೊಂದಿಗೆ ಜೊತೆಯಾಗಿ.”
+            </p>
+            <p className="verse-reflection">
+              “Every child is a sacred promise of heaven's love and grace. Join us in surrounding our sweet baby Halesh with prayers, blessings, and thanksgiving.”
+            </p>
+          </div>
         </div>
       </div>
     </section>
   );
 };
-

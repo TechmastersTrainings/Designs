@@ -6,7 +6,7 @@ export const MusicPlayer = ({ autoStartRequested }) => {
   const audioRef = useRef(null);
 
   useEffect(() => {
-    // Create HTML5 Audio instance with user-provided audio track
+    // Create HTML5 Audio instance with user-provided celebration track
     const audio = new Audio('./music.mp3');
     audio.loop = true;
     audio.preload = 'auto';
@@ -59,8 +59,8 @@ export const MusicPlayer = ({ autoStartRequested }) => {
       type="button"
       className={`floating-audio-pill ${isPlaying ? 'playing' : ''}`}
       onClick={toggleMusic}
-      title={isPlaying ? 'Mute celebration music' : 'Play celebration music'}
-      aria-label={isPlaying ? 'Mute music' : 'Play music'}
+      title={isPlaying ? 'Pause music' : 'Play music'}
+      aria-label={isPlaying ? 'Pause music' : 'Play music'}
     >
       <div className="audio-soundwave">
         <span className="audio-bar" />
@@ -69,9 +69,7 @@ export const MusicPlayer = ({ autoStartRequested }) => {
         <span className="audio-bar" />
       </div>
 
-      <span>{isPlaying ? 'Music Playing' : 'Play Music'}</span>
-
-      {isPlaying ? <Volume2 size={16} /> : <VolumeX size={16} />}
+      {isPlaying ? <Volume2 size={18} /> : <VolumeX size={18} />}
     </button>
   );
 };

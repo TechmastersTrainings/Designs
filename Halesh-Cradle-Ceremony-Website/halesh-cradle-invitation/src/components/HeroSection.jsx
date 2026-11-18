@@ -1,6 +1,6 @@
 import React from 'react';
 import { GoldCross, DoveEmblem, OrnateDivider, FloralCorner } from './GoldOrnaments';
-import { Calendar, MapPin, MessageSquareText } from 'lucide-react';
+import { Calendar, MapPin, Clock } from 'lucide-react';
 
 export const HeroSection = ({ onPhotoClick }) => {
   const handleAddToCalendar = () => {
@@ -100,14 +100,14 @@ export const HeroSection = ({ onPhotoClick }) => {
             <span>Add to Calendar</span>
           </button>
 
-          <a href="#venue" className="hero-cta-btn secondary">
-            <MapPin size={15} />
-            <span>View Venue</span>
+          <a href="#event-details" className="hero-cta-btn secondary">
+            <Clock size={15} />
+            <span>Ceremony Schedule</span>
           </a>
 
-          <a href="#rsvp" className="hero-cta-btn secondary">
-            <MessageSquareText size={15} />
-            <span>Confirm RSVP</span>
+          <a href="#event-details" className="hero-cta-btn secondary">
+            <MapPin size={15} />
+            <span>Venue &amp; Map</span>
           </a>
         </div>
       </div>

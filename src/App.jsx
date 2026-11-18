@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { OpeningEnvelope } from './components/OpeningEnvelope';
 import { HeroSection } from './components/HeroSection';
 import { BibleVerse } from './components/BibleVerse';
@@ -6,8 +6,6 @@ import { EventDetails } from './components/EventDetails';
 import { Countdown } from './components/Countdown';
 import { FamilySection } from './components/FamilySection';
 import { PhotoGallery } from './components/PhotoGallery';
-import { VenueSection } from './components/VenueSection';
-import { RSVPSection } from './components/RSVPSection';
 import { BlessingsWall } from './components/BlessingsWall';
 import { Footer } from './components/Footer';
 import { MusicPlayer } from './components/MusicPlayer';
@@ -79,10 +77,10 @@ export default function App() {
         {/* 2. Hero Section */}
         <HeroSection onPhotoClick={handleOpenPhoto} />
 
-        {/* 3. Sacred Bible Verse Section */}
+        {/* 3. Sacred Bible Verse Section with Kannada Reflection */}
         <BibleVerse />
 
-        {/* 4. Event & Ceremony Details */}
+        {/* 4. Event & Ceremony Details (2 Cards) */}
         <EventDetails />
 
         {/* 5. Live Countdown Section */}
@@ -94,20 +92,14 @@ export default function App() {
         {/* 7. Keepsake Photo Gallery */}
         <PhotoGallery onPhotoClick={handleOpenPhoto} />
 
-        {/* 8. Celebration Venue & Directions */}
-        <VenueSection />
-
-        {/* 9. RSVP & WhatsApp Confirmation */}
-        <RSVPSection onAddBlessing={handleAddBlessing} />
-
-        {/* 10. Interactive Blessings Wall */}
+        {/* 8. Interactive Blessings Wall */}
         <BlessingsWall blessings={blessings} onAddBlessing={handleAddBlessing} />
 
-        {/* 11. Reverent Closing Footer */}
+        {/* 9. Reverent Closing Footer */}
         <Footer />
       </main>
 
-      {/* Floating Background Hymn Player */}
+      {/* Floating Background Music Player */}
       <MusicPlayer autoStartRequested={isEnvelopeOpen} />
 
       {/* Image Lightbox Modal */}
@@ -115,4 +107,3 @@ export default function App() {
     </div>
   );
 }
-
