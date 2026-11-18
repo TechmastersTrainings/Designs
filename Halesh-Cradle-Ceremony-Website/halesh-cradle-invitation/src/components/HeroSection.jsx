@@ -9,7 +9,7 @@ export const HeroSection = ({ onPhotoClick }) => {
       "You are warmly invited to celebrate the Cradle Ceremony of baby Halesh with the Halesh family at Eden Garden Function Hall, Bidar."
     );
     const location = encodeURIComponent("Eden Garden Function Hall, Mailoor, Near GND College, Bidar, Karnataka");
-    const dates = "20261122T091000Z/20261122T123000Z";
+    const dates = "20261122T081500Z/20261122T120000Z";
     const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&details=${details}&location=${location}&dates=${dates}`;
     window.open(googleCalendarUrl, '_blank', 'noopener,noreferrer');
   };
@@ -85,7 +85,7 @@ export const HeroSection = ({ onPhotoClick }) => {
         <div className="hero-date-pill">
           <span>Sunday, 22 November 2026</span>
           <span>•</span>
-          <span>2:40 PM IST</span>
+          <span>1:45 PM IST</span>
         </div>
 
         {/* Quick Action Buttons */}

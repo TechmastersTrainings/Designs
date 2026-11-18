@@ -63,7 +63,7 @@ export const EventDetails = () => {
                 </div>
                 <div className="schedule-event-info">
                   <div className="schedule-label">Ceremony Time</div>
-                  <div className="schedule-time-badge">2:40 PM Onwards</div>
+                  <div className="schedule-time-badge">1:45 PM Onwards</div>
                   <p className="schedule-desc">
                     Holy cradle blessing, sacred hymns, dedication prayers and fellowship.
                   </p>
@@ -77,9 +77,9 @@ export const EventDetails = () => {
                 </div>
                 <div className="schedule-event-info">
                   <div className="schedule-label">Fellowship Lunch</div>
-                  <div className="schedule-time-badge">2:00 PM Onwards</div>
+                  <div className="schedule-time-badge">2:40 PM Onwards</div>
                   <p className="schedule-desc">
-                    Please join us beforehand to share in a delightful festive meal with our family.
+                    Please join us to share in a delightful festive meal with our family.
                   </p>
                 </div>
               </div>

@@ -3,7 +3,7 @@ import { OrnateDivider, GoldCross } from './GoldOrnaments';
 import { Sparkles } from 'lucide-react';
 
 export const Countdown = () => {
-  const targetTime = new Date('2026-11-22T14:40:00+05:30').getTime();
+  const targetTime = new Date('2026-11-22T13:45:00+05:30').getTime();
 
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -115,7 +115,7 @@ export const Countdown = () => {
               </div>
 
               <div className="countdown-target-note">
-                Sunday, 22 November 2026 · 2:40 PM IST · Eden Garden Function Hall, Bidar
+                Sunday, 22 November 2026 · 1:45 PM IST · Eden Garden Function Hall, Bidar
               </div>
             </>
           )}
