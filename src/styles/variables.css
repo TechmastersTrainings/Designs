@@ -1,58 +1,49 @@
 /* ==========================================================================
-   HIGH-RESOLUTION TYPOGRAPHY & BESPOKE COLOR SYSTEM
-   Featuring exact screenshot palette: #85ACFC, #880EEA, #BEFFBD, #FFE64E, #FF2800
+   COLOR SYSTEM — EXCLUSIVELY PALETTE-DRIVEN
+   Exact Colors: #85ACFC, #880EEA, #BEFFBD, #FFE64E, #FF2800
+   (Zero green background anywhere)
    ========================================================================== */
 
 :root {
-  /* SCREENSHOT ATTACHED 5-COLOR PALETTE */
+  /* THE 5 PRIMARY USER COLORS */
   --palette-blue: #85ACFC;
   --palette-purple: #880EEA;
   --palette-mint: #BEFFBD;
   --palette-gold: #FFE64E;
   --palette-red: #FF2800;
 
-  /* Primary Theme Canvas */
-  --emerald-deep: #123B32;
-  --emerald-darkest: #0A221C;
-  --emerald-muted: #1B4E43;
-  --emerald-surface: #154238;
-  --burgundy-deep: #641C35;
+  /* PURPLE / VIOLET THEME CANVASES (NO GREEN) */
+  --theme-darkest: #140224;
+  --theme-deep: #1F0438;
+  --theme-surface: #2C074E;
+  --theme-card-dark: #240540;
+  --theme-glow: #880EEA;
 
-  /* Rich Color Gradients from Palette */
+  /* SPECTRUM GRADIENTS */
   --grad-palette-bar: linear-gradient(90deg, #85ACFC 0%, #880EEA 25%, #BEFFBD 50%, #FFE64E 75%, #FF2800 100%);
-  --grad-purple-hero: linear-gradient(135deg, rgba(136, 14, 234, 0.25) 0%, rgba(18, 59, 50, 0.95) 100%);
-  --grad-gold-bright: linear-gradient(135deg, #FFF9C4 0%, #FFE64E 40%, #D6B875 80%, #B89650 100%);
-  --grad-red-seal: radial-gradient(circle at 35% 30%, #FF2800 0%, #D01E00 45%, #880EEA 90%, #451224 100%);
-  --grad-emerald-dark: linear-gradient(160deg, #154238 0%, #123B32 50%, #0A221C 100%);
-  --grad-emerald-hero: radial-gradient(circle at 50% 20%, #1E5549 0%, #123B32 60%, #081B16 100%);
-  --grad-ivory-card: linear-gradient(180deg, #FFFFFF 0%, #FFFDF9 60%, #FAF5EC 100%);
+  --grad-purple-hero: radial-gradient(circle at 50% 25%, #35085C 0%, #1F0438 60%, #120121 100%);
+  --grad-purple-dark: linear-gradient(160deg, #2B074C 0%, #1F0438 55%, #130122 100%);
+  --grad-gold-bright: linear-gradient(135deg, #FFFDE7 0%, #FFE64E 40%, #E8BC30 100%);
+  --grad-red-seal: radial-gradient(circle at 35% 30%, #FF3D18 0%, #FF2800 50%, #B81500 80%, #610B00 100%);
+  --grad-ivory-card: linear-gradient(180deg, #FFFFFF 0%, #FFFDF9 60%, #FAF6EE 100%);
 
-  /* Ivory & Neutral Surfaces */
-  --ivory-warm: #FFFDF7;
-  --cream-soft: #F5EEDC;
-  --cream-surface: #FDF9F0;
-  --charcoal-deep: #1A1816;
-  --charcoal-muted: #4A453F;
-  --charcoal-light: #6E6860;
+  /* NEUTRAL SURFACES */
+  --ivory-warm: #FFFDF9;
+  --charcoal-deep: #16121E;
+  --charcoal-muted: #4A4254;
+  --charcoal-light: #70677C;
 
-  /* Gold Foil & Borders */
-  --gold-champagne: #FFE64E;
-  --gold-antique: #D6B875;
+  /* BORDERS & SHADOWS */
   --gold-border: rgba(255, 230, 78, 0.45);
-  --gold-shadow: rgba(255, 230, 78, 0.25);
+  --purple-border: rgba(136, 14, 234, 0.4);
+  --blue-border: rgba(133, 172, 252, 0.45);
+  --shadow-card: 0 10px 30px -5px rgba(20, 2, 36, 0.12), 0 4px 14px rgba(136, 14, 234, 0.08);
+  --shadow-purple-glow: 0 15px 40px rgba(136, 14, 234, 0.35);
 
-  /* HIGH-RESOLUTION TYPOGRAPHY TOKENS (System & Ultra-Crisp Sans) */
-  --font-system: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Plus Jakarta Sans', sans-serif;
+  /* HIGH-RESOLUTION TYPOGRAPHY */
   --font-heading: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-script: 'Great Vibes', cursive;
-  --font-ceremony: 'Outfit', 'Inter', -apple-system, sans-serif;
-  --font-editorial: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-
-  /* Shadows */
-  --shadow-card: 0 10px 30px -5px rgba(18, 59, 50, 0.08), 0 4px 12px rgba(136, 14, 234, 0.06);
-  --shadow-gold: 0 8px 24px rgba(255, 230, 78, 0.3);
-  --shadow-purple: 0 10px 30px rgba(136, 14, 234, 0.35);
 }
 
 *, *::before, *::after {
@@ -63,15 +54,13 @@
 
 html {
   scroll-behavior: smooth;
-  /* Ultra-high resolution crisp font rendering */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
 }
 
 body {
-  background-color: var(--emerald-deep);
+  background-color: var(--theme-deep);
   color: var(--charcoal-deep);
   font-family: var(--font-body);
   overflow-x: hidden;
@@ -102,7 +91,7 @@ a {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--emerald-darkest);
+  background: var(--theme-darkest);
 }
 ::-webkit-scrollbar-thumb {
   background: var(--palette-gold);

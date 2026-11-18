@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
-  <meta name="theme-color" content="#123B32" />
+  <meta name="theme-color" content="#880EEA" />
   <meta name="author" content="Halesh Family" />
 
   <title>Halesh — Cradle Ceremony Invitation | 22 November 2026</title>
@@ -13,10 +13,10 @@
   <!-- High-Resolution Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cinzel:wght@600;700;800&family=Great+Vibes&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Great+Vibes&display=swap" rel="stylesheet" />
 
   <style>
-    /* Exact Palette from Screenshot */
+    /* Exact Palette from Screenshot (NO GREEN BACKGROUND) */
     :root {
       --palette-blue: #85ACFC;
       --palette-purple: #880EEA;
@@ -24,29 +24,28 @@
       --palette-gold: #FFE64E;
       --palette-red: #FF2800;
 
-      --emerald-deep: #123B32;
-      --emerald-darkest: #0A221C;
-      --emerald-muted: #1B4E43;
-      --burgundy-deep: #641C35;
+      --theme-deep: #1F0438;
+      --theme-darkest: #140224;
+      --theme-surface: #2C074E;
 
       --gold-champagne: #FFE64E;
       --gold-antique: #D6B875;
       --ivory-warm: #FFFDF7;
       --cream-soft: #F5EEDC;
-      --charcoal-deep: #1A1816;
-      --charcoal-muted: #4A453F;
+      --charcoal-deep: #16121E;
+      --charcoal-muted: #4A4254;
 
       --font-heading: 'Outfit', 'Inter', -apple-system, sans-serif;
       --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-script: 'Great Vibes', cursive;
 
       --grad-palette-bar: linear-gradient(90deg, #85ACFC 0%, #880EEA 25%, #BEFFBD 50%, #FFE64E 75%, #FF2800 100%);
-      --grad-gold-bright: linear-gradient(135deg, #FFF9C4 0%, #FFE64E 40%, #D6B875 80%, #B89650 100%);
-      --grad-red-seal: radial-gradient(circle at 35% 30%, #FF2800 0%, #D01E00 45%, #880EEA 90%, #451224 100%);
-      --grad-emerald-dark: linear-gradient(160deg, #154238 0%, #123B32 50%, #0A221C 100%);
-      --grad-emerald-hero: radial-gradient(circle at 50% 20%, #1E5549 0%, #123B32 60%, #081B16 100%);
+      --grad-purple-hero: radial-gradient(circle at 50% 25%, #35085C 0%, #1F0438 60%, #120121 100%);
+      --grad-purple-dark: linear-gradient(160deg, #2B074C 0%, #1F0438 55%, #130122 100%);
+      --grad-gold-bright: linear-gradient(135deg, #FFFDE7 0%, #FFE64E 40%, #E8BC30 100%);
+      --grad-red-seal: radial-gradient(circle at 35% 30%, #FF3D18 0%, #FF2800 50%, #B81500 80%, #610B00 100%);
       --grad-ivory-card: linear-gradient(180deg, #FFFFFF 0%, #FFFDF9 60%, #FAF5EC 100%);
-      --shadow-card: 0 10px 30px -5px rgba(18, 59, 50, 0.08), 0 4px 12px rgba(136, 14, 234, 0.06);
+      --shadow-card: 0 10px 30px -5px rgba(20, 2, 36, 0.12), 0 4px 14px rgba(136, 14, 234, 0.08);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -56,7 +55,7 @@
       -moz-osx-font-smoothing: grayscale;
       text-rendering: optimizeLegibility;
     }
-    body { background-color: var(--emerald-deep); color: var(--charcoal-deep); font-family: var(--font-body); overflow-x: hidden; line-height: 1.6; letter-spacing: -0.01em; }
+    body { background-color: var(--theme-deep); color: var(--charcoal-deep); font-family: var(--font-body); overflow-x: hidden; line-height: 1.6; letter-spacing: -0.01em; }
     img { max-width: 100%; height: auto; display: block; }
     button { font-family: inherit; cursor: pointer; border: none; outline: none; }
     a { color: inherit; text-decoration: none; }
@@ -70,12 +69,12 @@
     /* OPENING ENVELOPE OVERLAY */
     .envelope-screen {
       position: fixed; inset: 0; z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center;
-      background: radial-gradient(circle at 50% 30%, #1A4E42 0%, #123B32 55%, #081E19 100%);
+      background: radial-gradient(circle at 50% 30%, #35085C 0%, #1F0438 55%, #10011C 100%);
       padding: 24px 20px; overflow: hidden; transition: opacity 0.8s ease, visibility 0.8s;
     }
     .envelope-screen.opened { opacity: 0; visibility: hidden; pointer-events: none; }
-    .envelope-frame-border { position: absolute; inset: 18px; border: 1px solid rgba(255, 230, 78, 0.4); pointer-events: none; }
-    .envelope-frame-inner { position: absolute; inset: 24px; border: 1px dashed rgba(133, 172, 252, 0.35); pointer-events: none; }
+    .envelope-frame-border { position: absolute; inset: 18px; border: 1px solid rgba(255, 230, 78, 0.45); pointer-events: none; }
+    .envelope-frame-inner { position: absolute; inset: 24px; border: 1px dashed rgba(133, 172, 252, 0.4); pointer-events: none; }
     .envelope-content { position: relative; z-index: 5; display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 580px; width: 100%; }
     .envelope-eyebrow { font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--palette-gold); margin-bottom: 8px; font-weight: 700; }
     .envelope-title { font-family: var(--font-heading); font-size: clamp(32px, 6.5vw, 48px); font-weight: 800; color: #FFFFFF; margin-bottom: 8px; line-height: 1.15; }
@@ -83,22 +82,22 @@
 
     /* 3D Envelope */
     .envelope-wrapper { position: relative; width: min(92vw, 380px); height: 240px; perspective: 1200px; margin: 10px auto 26px; cursor: pointer; }
-    .envelope-body { position: absolute; inset: 0; background: linear-gradient(145deg, #184A3F 0%, #123B32 70%, #0D2C25 100%); border-radius: 12px; box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 230, 78, 0.4); }
-    .envelope-foil-border { position: absolute; inset: 6px; border: 1px solid rgba(255, 230, 78, 0.45); border-radius: 8px; pointer-events: none; }
+    .envelope-body { position: absolute; inset: 0; background: linear-gradient(145deg, #2D0752 0%, #1F0438 70%, #130122 100%); border-radius: 12px; box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 230, 78, 0.45); }
+    .envelope-foil-border { position: absolute; inset: 6px; border: 1px solid rgba(255, 230, 78, 0.5); border-radius: 8px; pointer-events: none; }
     .letter-card {
       position: absolute; left: 6%; right: 6%; top: 8%; height: 88%;
       background: linear-gradient(180deg, #FFFFFF 0%, #FFFDF9 60%, #FAF5EC 100%);
       border-radius: 8px; padding: 20px 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3); border: 1px solid rgba(214, 184, 117, 0.5);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35); border: 1px solid rgba(255, 230, 78, 0.6);
       transition: transform 0.9s cubic-bezier(0.25, 0.8, 0.25, 1); z-index: 2; overflow: hidden;
     }
     .letter-name { font-family: var(--font-heading); font-size: clamp(32px, 7vw, 42px); font-weight: 800; color: var(--palette-purple); line-height: 1.1; }
-    .letter-tag { font-family: var(--font-heading); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--emerald-muted); font-weight: 700; margin-top: 4px; }
-    .envelope-left-fold { position: absolute; inset: 0; background: linear-gradient(135deg, #144238, #0F332B); clip-path: polygon(0 0, 50% 50%, 0 100%); border-radius: 12px 0 0 12px; z-index: 3; }
-    .envelope-right-fold { position: absolute; inset: 0; background: linear-gradient(225deg, #144238, #0E3029); clip-path: polygon(100% 0, 50% 50%, 100% 100%); border-radius: 0 12px 12px 0; z-index: 3; }
-    .envelope-bottom-fold { position: absolute; inset: 0; background: linear-gradient(180deg, #17453B 0%, #10362E 100%); clip-path: polygon(0 100%, 50% 45%, 100% 100%); border-radius: 0 0 12px 12px; z-index: 4; }
+    .letter-tag { font-family: var(--font-heading); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--palette-blue); font-weight: 700; margin-top: 4px; }
+    .envelope-left-fold { position: absolute; inset: 0; background: linear-gradient(135deg, #240542, #18032C); clip-path: polygon(0 0, 50% 50%, 0 100%); border-radius: 12px 0 0 12px; z-index: 3; }
+    .envelope-right-fold { position: absolute; inset: 0; background: linear-gradient(225deg, #240542, #18032C); clip-path: polygon(100% 0, 50% 50%, 100% 100%); border-radius: 0 12px 12px 0; z-index: 3; }
+    .envelope-bottom-fold { position: absolute; inset: 0; background: linear-gradient(180deg, #2E0753 0%, #1A0330 100%); clip-path: polygon(0 100%, 50% 45%, 100% 100%); border-radius: 0 0 12px 12px; z-index: 4; }
     .envelope-top-flap {
-      position: absolute; inset: 0; background: linear-gradient(180deg, #1B5145 0%, #153E34 100%);
+      position: absolute; inset: 0; background: linear-gradient(180deg, #370965 0%, #22053D 100%);
       clip-path: polygon(0 0, 100% 0, 50% 54%); border-radius: 12px 12px 0 0;
       transform-origin: top; transform-style: preserve-3d; transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); z-index: 5;
     }
@@ -114,109 +113,109 @@
 
     .open-invite-btn {
       position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-      padding: 16px 38px; background: var(--grad-gold-bright); color: #123B32;
+      padding: 16px 38px; background: var(--grad-gold-bright); color: #1F0438;
       font-family: var(--font-heading); font-size: 13px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase;
-      border-radius: 50px; border: 1px solid #FFFDE7; box-shadow: 0 8px 25px rgba(255, 230, 78, 0.4);
+      border-radius: 50px; border: 1px solid #FFFDE7; box-shadow: 0 8px 25px rgba(255, 230, 78, 0.45);
       transition: all 0.3s;
     }
     .open-invite-btn:hover { transform: translateY(-2px) scale(1.03); }
 
     /* SECTIONS */
     .invitation-section { position: relative; padding: 85px 20px; overflow: hidden; }
-    .invitation-section.dark { background: var(--grad-emerald-dark); color: #FFFFFF; }
+    .invitation-section.dark { background: var(--grad-purple-dark); color: #FFFFFF; }
     .invitation-section.light { background: linear-gradient(180deg, #FFFFFF 0%, #FFFDF9 50%, #FAF5EC 100%); color: var(--charcoal-deep); }
     .section-container { max-width: 1040px; margin: 0 auto; position: relative; z-index: 2; }
     .section-header { text-align: center; margin-bottom: 46px; }
-    .section-badge { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--palette-gold); font-weight: 700; margin-bottom: 10px; background: rgba(136, 14, 234, 0.2); padding: 6px 16px; border-radius: 50px; border: 1px solid rgba(255, 230, 78, 0.4); }
-    .section-badge.light-theme { color: var(--palette-purple); background: rgba(136, 14, 234, 0.08); border-color: rgba(136, 14, 234, 0.25); }
+    .section-badge { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--palette-gold); font-weight: 700; margin-bottom: 10px; background: rgba(136, 14, 234, 0.25); padding: 6px 18px; border-radius: 50px; border: 1px solid rgba(255, 230, 78, 0.45); }
+    .section-badge.light-theme { color: var(--palette-purple); background: rgba(136, 14, 234, 0.08); border-color: rgba(136, 14, 234, 0.3); }
     .section-title { font-family: var(--font-heading); font-size: clamp(32px, 5.5vw, 46px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.2; margin-bottom: 12px; }
-    .section-title.gold-accent { background: linear-gradient(135deg, #FFFFFF 0%, #FFE64E 60%, #D6B875 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .section-title.dark-text { color: #123B32; }
+    .section-title.gold-accent { background: linear-gradient(135deg, #FFFFFF 0%, #FFE64E 60%, #E8BC30 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .section-title.dark-text { color: var(--palette-purple); }
     .section-subtitle { font-family: var(--font-body); font-size: clamp(16px, 3.2vw, 19px); color: var(--charcoal-muted); max-width: 620px; margin: 0 auto; line-height: 1.6; font-weight: 500; }
     .invitation-section.dark .section-subtitle { color: #D3C9B8; }
 
     /* Hero */
-    .hero-section { position: relative; min-height: 94vh; display: flex; align-items: center; justify-content: center; padding: 100px 20px 80px; background: var(--grad-emerald-hero); color: #FFFFFF; text-align: center; border-bottom: 3px solid transparent; border-image: var(--grad-palette-bar) 1; }
-    .hero-card { position: relative; max-width: 840px; width: 100%; padding: 55px 40px; background: rgba(14, 46, 39, 0.82); backdrop-filter: blur(10px); border-radius: 20px; border: 1px solid rgba(255, 230, 78, 0.45); box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.6), 0 0 30px rgba(136, 14, 234, 0.25); overflow: hidden; }
+    .hero-section { position: relative; min-height: 94vh; display: flex; align-items: center; justify-content: center; padding: 100px 20px 80px; background: var(--grad-purple-hero); color: #FFFFFF; text-align: center; border-bottom: 3px solid transparent; border-image: var(--grad-palette-bar) 1; }
+    .hero-card { position: relative; max-width: 840px; width: 100%; padding: 55px 40px; background: rgba(35, 6, 62, 0.88); backdrop-filter: blur(12px); border-radius: 20px; border: 1px solid rgba(255, 230, 78, 0.5); box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.7), 0 0 40px rgba(136, 14, 234, 0.35); overflow: hidden; }
     .hero-kicker { font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--palette-gold); margin-bottom: 12px; font-weight: 700; }
-    .hero-main-name { font-family: var(--font-heading); font-size: clamp(54px, 12vw, 92px); font-weight: 900; letter-spacing: -0.03em; color: #FFFFFF; text-shadow: 0 4px 25px rgba(255, 230, 78, 0.5); line-height: 1.05; margin: 4px 0 10px; }
-    .hero-ceremony-label { display: inline-block; font-family: var(--font-heading); font-size: clamp(14px, 3.4vw, 19px); letter-spacing: 0.28em; text-transform: uppercase; color: var(--palette-gold); font-weight: 800; padding: 6px 24px; border-top: 1px solid rgba(255, 230, 78, 0.45); border-bottom: 1px solid rgba(255, 230, 78, 0.45); margin-bottom: 28px; }
+    .hero-main-name { font-family: var(--font-heading); font-size: clamp(54px, 12vw, 92px); font-weight: 900; letter-spacing: -0.03em; color: #FFFFFF; text-shadow: 0 4px 25px rgba(255, 230, 78, 0.55); line-height: 1.05; margin: 4px 0 10px; }
+    .hero-ceremony-label { display: inline-block; font-family: var(--font-heading); font-size: clamp(14px, 3.4vw, 19px); letter-spacing: 0.28em; text-transform: uppercase; color: var(--palette-gold); font-weight: 800; padding: 6px 24px; border-top: 1px solid rgba(255, 230, 78, 0.5); border-bottom: 1px solid rgba(255, 230, 78, 0.5); margin-bottom: 28px; }
 
     /* Baby Portrait */
     .hero-portrait-wrapper { position: relative; width: min(84vw, 290px); margin: 0 auto 32px; }
-    .hero-portrait-frame { position: relative; width: 100%; aspect-ratio: 4 / 5.2; border-radius: 140px 140px 24px 24px; padding: 9px; background: var(--grad-gold-bright); box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55), 0 0 25px rgba(255, 230, 78, 0.4); cursor: pointer; transition: transform 0.4s ease; }
+    .hero-portrait-frame { position: relative; width: 100%; aspect-ratio: 4 / 5.2; border-radius: 140px 140px 24px 24px; padding: 9px; background: var(--grad-gold-bright); box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 28px rgba(255, 230, 78, 0.45); cursor: pointer; transition: transform 0.4s ease; }
     .hero-portrait-frame:hover { transform: translateY(-4px); }
     .hero-portrait-inner { width: 100%; height: 100%; border-radius: 132px 132px 18px 18px; overflow: hidden; background-color: var(--cream-soft); border: 2px solid #FFFDF7; }
     .hero-portrait-img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
     .hero-portrait-tag { position: absolute; bottom: -14px; left: 50%; transform: translateX(-50%); background: var(--palette-purple); color: #FFFFFF; border: 1px solid var(--palette-gold); padding: 5px 20px; border-radius: 50px; font-family: var(--font-heading); font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; white-space: nowrap; box-shadow: 0 4px 14px rgba(0,0,0,0.5); }
 
     .hero-blessing-quote { font-family: var(--font-body); font-size: clamp(17px, 3.8vw, 21px); font-weight: 500; max-width: 640px; margin: 18px auto 26px; line-height: 1.7; color: #F8F3E8; }
-    .hero-parents-hosting { margin-top: 18px; padding-top: 20px; border-top: 1px solid rgba(255, 230, 78, 0.25); }
+    .hero-parents-hosting { margin-top: 18px; padding-top: 20px; border-top: 1px solid rgba(255, 230, 78, 0.3); }
     .hero-host-names { font-family: var(--font-heading); font-size: clamp(20px, 4.2vw, 26px); color: #FFFFFF; font-weight: 700; }
     .hero-grand-names { font-family: var(--font-body); font-size: clamp(15px, 3.4vw, 17px); color: #D3C9B8; margin-top: 6px; font-weight: 500; }
-    .hero-date-pill { display: inline-flex; align-items: center; gap: 12px; background: rgba(136, 14, 234, 0.2); border: 1px solid var(--palette-gold); padding: 10px 24px; border-radius: 50px; margin-top: 26px; font-family: var(--font-heading); font-size: clamp(12px, 2.8vw, 14px); color: var(--palette-gold); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+    .hero-date-pill { display: inline-flex; align-items: center; gap: 12px; background: rgba(136, 14, 234, 0.3); border: 1px solid var(--palette-gold); padding: 10px 24px; border-radius: 50px; margin-top: 26px; font-family: var(--font-heading); font-size: clamp(12px, 2.8vw, 14px); color: var(--palette-gold); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
     .hero-actions { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; margin-top: 30px; }
     .hero-cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 50px; font-family: var(--font-heading); font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.3s; }
-    .hero-cta-btn.primary { background: var(--grad-gold-bright); color: #123B32; box-shadow: 0 4px 18px rgba(255, 230, 78, 0.4); }
+    .hero-cta-btn.primary { background: var(--grad-gold-bright); color: #1F0438; box-shadow: 0 4px 18px rgba(255, 230, 78, 0.45); }
     .hero-cta-btn.secondary { background: rgba(255, 255, 255, 0.1); color: #FFFFFF; border: 1px solid rgba(255, 230, 78, 0.6); }
 
     /* Cards */
-    .verse-card, .family-card, .rsvp-card { position: relative; max-width: 820px; margin: 0 auto; background: var(--grad-ivory-card); border: 1px solid rgba(214, 184, 117, 0.45); border-radius: 18px; padding: 55px 44px; text-align: center; box-shadow: var(--shadow-card); overflow: hidden; }
-    .verse-scripture { font-family: var(--font-heading); font-size: clamp(22px, 4.4vw, 32px); font-weight: 700; letter-spacing: -0.015em; color: #123B32; line-height: 1.5; margin: 20px auto 16px; max-width: 680px; }
-    .verse-citation { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--palette-purple); font-weight: 800; }
+    .verse-card, .family-card, .rsvp-card { position: relative; max-width: 820px; margin: 0 auto; background: var(--grad-ivory-card); border: 1px solid rgba(214, 184, 117, 0.5); border-radius: 18px; padding: 55px 44px; text-align: center; box-shadow: var(--shadow-card); overflow: hidden; }
+    .verse-scripture { font-family: var(--font-heading); font-size: clamp(22px, 4.4vw, 32px); font-weight: 700; letter-spacing: -0.015em; color: var(--palette-purple); line-height: 1.5; margin: 20px auto 16px; max-width: 680px; }
+    .verse-citation { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--palette-red); font-weight: 800; }
 
     /* Event Details Grid */
     .details-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-bottom: 40px; }
-    .detail-card { background: #FFFFFF; border: 1px solid rgba(214, 184, 117, 0.35); border-radius: 16px; padding: 34px 26px; text-align: center; box-shadow: var(--shadow-card); }
-    .detail-icon-circle { width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(145deg, #184A3F, #123B32); color: var(--palette-gold); display: grid; place-items: center; margin: 0 auto 16px; font-size: 24px; border: 1px solid rgba(255, 230, 78, 0.45); }
+    .detail-card { background: #FFFFFF; border: 1px solid rgba(214, 184, 117, 0.4); border-radius: 16px; padding: 34px 26px; text-align: center; box-shadow: var(--shadow-card); border-top: 3px solid var(--palette-purple); }
+    .detail-icon-circle { width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(145deg, #880EEA, #4E0888); color: var(--palette-gold); display: grid; place-items: center; margin: 0 auto 16px; font-size: 24px; border: 1px solid rgba(255, 230, 78, 0.45); }
     .detail-title { font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--palette-purple); font-weight: 800; margin-bottom: 8px; }
-    .detail-primary { font-family: var(--font-heading); font-size: 20px; color: #123B32; font-weight: 700; margin-bottom: 6px; }
+    .detail-primary { font-family: var(--font-heading); font-size: 20px; color: #1F0438; font-weight: 700; margin-bottom: 6px; }
     .detail-desc { font-family: var(--font-body); font-size: 14px; color: var(--charcoal-muted); font-weight: 500; }
 
     /* Clergy Container */
-    .clergy-container { background: #FFFFFF; border: 1px solid rgba(214, 184, 117, 0.35); border-radius: 16px; padding: 34px 26px; text-align: center; margin-top: 10px; }
+    .clergy-container { background: #FFFFFF; border: 1px solid rgba(214, 184, 117, 0.4); border-radius: 16px; padding: 34px 26px; text-align: center; margin-top: 10px; border-top: 3px solid var(--palette-red); }
     .clergy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-top: 18px; }
-    .clergy-item { padding: 18px; border-radius: 12px; background: rgba(245, 238, 220, 0.4); border: 1px solid rgba(133, 172, 252, 0.3); }
+    .clergy-item { padding: 18px; border-radius: 12px; background: rgba(133, 172, 252, 0.08); border: 1px solid rgba(133, 172, 252, 0.35); }
 
     /* Countdown */
-    .countdown-box { background: rgba(14, 46, 39, 0.88); border: 1px solid rgba(255, 230, 78, 0.45); border-radius: 20px; padding: 50px 30px; text-align: center; max-width: 860px; margin: 0 auto; overflow: hidden; position: relative; }
+    .countdown-box { background: rgba(35, 6, 62, 0.9); border: 1px solid rgba(255, 230, 78, 0.5); border-radius: 20px; padding: 50px 30px; text-align: center; max-width: 860px; margin: 0 auto; overflow: hidden; position: relative; }
     .countdown-grid { display: flex; justify-content: center; align-items: center; gap: 16px; flex-wrap: wrap; margin: 30px 0 20px; }
-    .countdown-unit { min-width: 104px; padding: 20px 16px; background: linear-gradient(180deg, #184A3F, #10362E); border: 1px solid rgba(255, 230, 78, 0.45); border-radius: 14px; display: flex; flex-direction: column; align-items: center; }
+    .countdown-unit { min-width: 104px; padding: 20px 16px; background: linear-gradient(180deg, #370965, #20043A); border: 1px solid rgba(255, 230, 78, 0.5); border-radius: 14px; display: flex; flex-direction: column; align-items: center; }
     .countdown-number { font-family: var(--font-heading); font-size: clamp(36px, 7vw, 50px); font-weight: 900; color: var(--palette-gold); line-height: 1; letter-spacing: -0.02em; }
     .countdown-label { font-family: var(--font-heading); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #D3C9B8; margin-top: 8px; font-weight: 700; }
 
     /* Gallery */
     .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-    .gallery-item { background: #FFFFFF; border: 1px solid rgba(214, 184, 117, 0.45); border-radius: 16px; padding: 16px; cursor: pointer; transition: transform 0.3s; }
+    .gallery-item { background: #FFFFFF; border: 1px solid rgba(214, 184, 117, 0.5); border-radius: 16px; padding: 16px; cursor: pointer; transition: transform 0.3s; border-top: 3px solid var(--palette-gold); }
     .gallery-item:hover { transform: translateY(-5px); }
     .gallery-image-frame { width: 100%; aspect-ratio: 4 / 4.6; border-radius: 12px; overflow: hidden; background: var(--cream-soft); }
     .gallery-image { width: 100%; height: 100%; object-fit: cover; }
 
     /* Venue */
-    .venue-card { background: rgba(14, 46, 39, 0.88); border: 1px solid rgba(255, 230, 78, 0.45); border-radius: 20px; padding: 50px 36px; color: #FFFFFF; overflow: hidden; }
+    .venue-card { background: rgba(35, 6, 62, 0.9); border: 1px solid rgba(255, 230, 78, 0.5); border-radius: 20px; padding: 50px 36px; color: #FFFFFF; overflow: hidden; }
     .venue-layout { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 36px; align-items: center; }
     @media (max-width: 768px) { .venue-layout { grid-template-columns: 1fr; } }
-    .venue-map-preview { width: 100%; height: 280px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255, 230, 78, 0.4); }
+    .venue-map-preview { width: 100%; height: 280px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255, 230, 78, 0.45); }
 
     /* RSVP Form */
     .form-group { display: flex; flex-direction: column; gap: 8px; text-align: left; margin-bottom: 18px; }
-    .form-label { font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: #123B32; font-weight: 800; }
+    .form-label { font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: #1F0438; font-weight: 800; }
     .form-input, .form-select, .form-textarea { width: 100%; padding: 14px 16px; border-radius: 10px; border: 1px solid rgba(214, 184, 117, 0.4); background: #FFFFFF; font-size: 15px; font-weight: 500; }
     .whatsapp-rsvp-btn { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 28px; border-radius: 50px; background: #25D366; color: #FFFFFF; font-family: var(--font-heading); font-size: 13px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35); }
 
     /* Floating Audio Pill */
     .floating-audio-pill {
       position: fixed; bottom: 24px; right: 24px; z-index: 999; display: flex; align-items: center; gap: 10px;
-      padding: 10px 18px; background: rgba(18, 59, 50, 0.94); backdrop-filter: blur(10px);
+      padding: 10px 18px; background: rgba(31, 4, 56, 0.94); backdrop-filter: blur(10px);
       border: 1px solid var(--palette-gold); border-radius: 50px; color: #FFFFFF;
       font-family: var(--font-heading); font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer;
     }
 
     /* Footer */
-    .invitation-footer { background: linear-gradient(180deg, #123B32 0%, #081E19 100%); color: #FFFFFF; padding: 70px 20px 50px; text-align: center; border-top: 3px solid transparent; border-image: var(--grad-palette-bar) 1; }
+    .invitation-footer { background: linear-gradient(180deg, #1F0438 0%, #10011C 100%); color: #FFFFFF; padding: 70px 20px 50px; text-align: center; border-top: 3px solid transparent; border-image: var(--grad-palette-bar) 1; }
 
     /* Lightbox Modal */
-    .lightbox-backdrop { position: fixed; inset: 0; z-index: 10000; background: rgba(10, 34, 28, 0.95); backdrop-filter: blur(12px); display: flex; align-items: center; justify-content: center; padding: 30px 20px; }
+    .lightbox-backdrop { position: fixed; inset: 0; z-index: 10000; background: rgba(16, 1, 28, 0.96); backdrop-filter: blur(14px); display: flex; align-items: center; justify-content: center; padding: 30px 20px; }
     .lightbox-backdrop.hidden { display: none; }
     .lightbox-img { max-height: 80vh; max-width: 90vw; border-radius: 14px; border: 2px solid var(--palette-gold); }
   </style>
@@ -239,7 +238,7 @@
         <div class="envelope-body">
           <div class="envelope-foil-border"></div>
           <div class="letter-card">
-            <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--grad-palette-bar);"></div>
+            <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--grad-palette-bar);"></div>
             <div style="color: var(--palette-purple); font-size: 14px; font-weight: 800; margin-bottom: 4px;">✦ ✝ ✦</div>
             <div class="letter-name">Halesh</div>
             <div class="letter-tag">Cradle Ceremony</div>
@@ -407,10 +406,10 @@
           <div class="spectrum-top"></div>
           <div class="section-badge light-theme">From Our Hearts</div>
           <h2 class="section-title dark-text">A Warm Invitation From Our Family</h2>
-          <blockquote style="font-family: var(--font-heading); font-size: 21px; font-weight: 600; color: #123B32; margin: 20px 0;">
+          <blockquote style="font-family: var(--font-heading); font-size: 21px; font-weight: 600; color: #1F0438; margin: 20px 0;">
             “Your presence will make our celebration even more special. We request the pleasure of your company with family and friends to bless our beloved child.”
           </blockquote>
-          <div style="margin-top: 24px; font-family: var(--font-heading); font-size: 20px; font-weight: 700; color: #123B32;">
+          <div style="margin-top: 24px; font-family: var(--font-heading); font-size: 20px; font-weight: 700; color: #1F0438;">
             Mrs. Muttamma &amp; Mr. Arjun Rao Halesh
           </div>
           <div style="font-family: var(--font-body); font-size: 15px; color: var(--charcoal-muted); margin-top: 4px; font-weight: 500;">
@@ -439,7 +438,7 @@
               <img src="public/halesh-baby.jpg" alt="Baby Halesh" class="gallery-image" onerror="this.src='halesh-baby.jpg'" />
             </div>
             <div style="text-align: center; margin-top: 12px;">
-              <h3 style="font-family: var(--font-heading); font-size: 18px; font-weight: 700; color: #123B32;">Our Precious Blessing — Baby Halesh</h3>
+              <h3 style="font-family: var(--font-heading); font-size: 18px; font-weight: 700; color: #1F0438;">Our Precious Blessing — Baby Halesh</h3>
               <p style="font-family: var(--font-body); font-size: 14px; color: var(--charcoal-muted); font-weight: 500;">The little joy who fills our family with pure smiles</p>
             </div>
           </div>
@@ -448,7 +447,7 @@
               <img src="public/invitation-card.jpg" alt="Original Card Keepsake" class="gallery-image" onerror="this.src='invitation-card.jpg'" />
             </div>
             <div style="text-align: center; margin-top: 12px;">
-              <h3 style="font-family: var(--font-heading); font-size: 18px; font-weight: 700; color: #123B32;">The Family Invitation Keepsake</h3>
+              <h3 style="font-family: var(--font-heading); font-size: 18px; font-weight: 700; color: #1F0438;">The Family Invitation Keepsake</h3>
               <p style="font-family: var(--font-body); font-size: 14px; color: var(--charcoal-muted); font-weight: 500;">Original printed invitation blessed by Methodist church clergy</p>
             </div>
           </div>
@@ -472,7 +471,7 @@
               <p style="font-family: var(--font-body); font-size: 18px; color: #E6DECD; line-height: 1.6; margin-bottom: 16px; font-weight: 500;">
                 Mailoor, Near GND College,<br>Bidar, Karnataka — 585403
               </p>
-              <div style="background: rgba(133, 172, 252, 0.15); border: 1px solid rgba(133, 172, 252, 0.4); padding: 8px 14px; border-radius: 8px; font-size: 13px; color: var(--palette-blue); margin-bottom: 24px; font-weight: 600;">
+              <div style="background: rgba(133, 172, 252, 0.18); border: 1px solid rgba(133, 172, 252, 0.5); padding: 8px 14px; border-radius: 8px; font-size: 13px; color: var(--palette-blue); margin-bottom: 24px; font-weight: 600;">
                 📍 Landmark: Near Guru Nanak Dev (GND) Engineering College
               </div>
               <a href="https://www.google.com/maps/search/?api=1&query=Eden+Garden+Function+Hall+Mailoor+Near+GND+College+Bidar+Karnataka" target="_blank" rel="noopener noreferrer" class="hero-cta-btn primary">
