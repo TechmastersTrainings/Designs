@@ -541,10 +541,16 @@
     </div>
   </footer>
 
-  <!-- FLOATING HYMN AUDIO PILL -->
-  <button type="button" class="floating-audio-pill" id="musicBtn" title="Play gentle cradle instrumental hymn">
-    <span>🎵 Play Hymn</span>
+  <!-- FLOATING CELEBRATION AUDIO PILL -->
+  <button type="button" class="floating-audio-pill" id="musicBtn" title="Play celebration music">
+    <div class="audio-soundwave" style="display:inline-flex; align-items:flex-end; gap:2.5px; height:14px; margin-right:6px;">
+      <span class="audio-bar" style="width:3px; background:#FFE64E; border-radius:2px; height:6px;"></span>
+      <span class="audio-bar" style="width:3px; background:#FFE64E; border-radius:2px; height:10px;"></span>
+      <span class="audio-bar" style="width:3px; background:#FFE64E; border-radius:2px; height:6px;"></span>
+    </div>
+    <span id="musicBtnText">Play Music</span>
   </button>
+  <audio id="bgMusic" src="public/music.mp3" loop preload="auto"></audio>
 
   <!-- LIGHTBOX MODAL -->
   <div class="lightbox-backdrop hidden" id="lightboxModal">
@@ -564,6 +570,13 @@
     function openEnvelope() {
       waxSeal.classList.add('animating');
       envWrapper.classList.add('is-opening');
+      if (!isPlaying) {
+        bgAudio.play().then(() => {
+          isPlaying = true;
+          musicBtn.classList.add('playing');
+          musicBtnText.textContent = 'Music Playing';
+        }).catch(() => {});
+      }
       setTimeout(() => {
         envScreen.classList.add('opened');
       }, 1100);
@@ -617,42 +630,37 @@
     document.getElementById('closeLightbox').addEventListener('click', () => modal.classList.add('hidden'));
     modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.add('hidden'); });
 
-    // Web Audio API Hymn Synthesizer
-    let audioCtx = null;
+    // Background Audio Controller (Using Provided Celebration Music)
+    const bgAudio = document.getElementById('bgMusic');
+    const musicBtn = document.getElementById('musicBtn');
+    const musicBtnText = document.getElementById('musicBtnText');
     let isPlaying = false;
-    let noteTimer = null;
-    const notes = [261.63, 329.63, 392, 523.25, 440, 392, 329.63, 293.66, 261.63, 329.63, 392, 523.25, 587.33, 523.25];
-    let noteIdx = 0;
 
-    function playNextTone() {
-      if (!isPlaying || !audioCtx) return;
-      const osc = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
-      osc.type = 'triangle';
-      osc.frequency.setValueAtTime(notes[noteIdx], audioCtx.currentTime);
-      gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
-      gain.gain.linearRampToValueAtTime(0.06, audioCtx.currentTime + 0.08);
-      gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 1.2);
-      osc.connect(gain);
-      gain.connect(audioCtx.destination);
-      osc.start();
-      osc.stop(audioCtx.currentTime + 1.2);
-      noteIdx = (noteIdx + 1) % notes.length;
-      noteTimer = setTimeout(playNextTone, 1100);
+    function toggleAudio() {
+      if (isPlaying) {
+        bgAudio.pause();
+        isPlaying = false;
+        musicBtn.classList.remove('playing');
+        musicBtnText.textContent = 'Play Music';
+      } else {
+        bgAudio.play().then(() => {
+          isPlaying = true;
+          musicBtn.classList.add('playing');
+          musicBtnText.textContent = 'Music Playing';
+        }).catch(e => console.log('Playback waiting for interaction:', e));
+      }
     }
 
-    document.getElementById('musicBtn').addEventListener('click', () => {
-      if (isPlaying) {
-        isPlaying = false;
-        clearTimeout(noteTimer);
-        document.getElementById('musicBtn').innerHTML = '<span>🎵 Play Hymn</span>';
-      } else {
-        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        if (audioCtx.state === 'suspended') audioCtx.resume();
-        isPlaying = true;
-        playNextTone();
-        document.getElementById('musicBtn').innerHTML = '<span>🔊 Hymn Playing</span>';
-      }
+    musicBtn.addEventListener('click', toggleAudio);
+    bgAudio.addEventListener('pause', () => {
+      isPlaying = false;
+      musicBtn.classList.remove('playing');
+      musicBtnText.textContent = 'Play Music';
+    });
+    bgAudio.addEventListener('play', () => {
+      isPlaying = true;
+      musicBtn.classList.add('playing');
+      musicBtnText.textContent = 'Music Playing';
     });
   </script>
 </body>
