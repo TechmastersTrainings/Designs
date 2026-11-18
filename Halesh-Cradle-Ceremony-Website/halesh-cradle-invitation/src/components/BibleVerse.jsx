@@ -36,13 +36,10 @@ export const BibleVerse = () => {
 
           <OrnateDivider maxWidth={320} />
 
-          {/* Kannada Translation as Requested */}
+          {/* Pure Kannada Blessing (English reflection removed; Halesh as family name respected) */}
           <div className="kannada-verse-block">
-            <p className="verse-kannada-text">
-              “ಪ್ರತಿಯೊಂದು ಮಗುವು ದೇವರ ಪ್ರೀತಿ ಮತ್ತು ಕೃಪೆಯ ಪವಿತ್ರ ವಾಗ್ದಾನವಾಗಿದೆ. ನಮ್ಮ ಮುದ್ದಾದ ಕಂದ ಹಾಲೇಶ್‌ಗೆ ನಿಮ್ಮ ಪ್ರಾರ್ಥನೆ, ಆಶೀರ್ವಾದ ಮತ್ತು ಕೃತಜ್ಞತೆಗಳನ್ನು ಸಲ್ಲಿಸಲು ನಮ್ಮೊಂದಿಗೆ ಜೊತೆಯಾಗಿ.”
-            </p>
-            <p className="verse-reflection">
-              “Every child is a sacred promise of heaven's love and grace. Join us in surrounding our sweet baby Halesh with prayers, blessings, and thanksgiving.”
+            <p className="verse-kannada-text" style={{ marginBottom: 0 }}>
+              “ಪ್ರತಿಯೊಂದು ಮಗುವು ದೇವರ ಪ್ರೀತಿ ಮತ್ತು ಕೃಪೆಯ ಪವಿತ್ರ ವಾಗ್ದಾನವಾಗಿದೆ. ನಮ್ಮ ಮುದ್ದಾದ ಕಂದನಿಗೆ ನಿಮ್ಮ ಪ್ರಾರ್ಥನೆ, ಆಶೀರ್ವಾದ ಮತ್ತು ಕೃತಜ್ಞತೆಗಳನ್ನು ಸಲ್ಲಿಸಲು ನಮ್ಮೊಂದಿಗೆ ಜೊತೆಯಾಗಿ.”
             </p>
           </div>
         </div>

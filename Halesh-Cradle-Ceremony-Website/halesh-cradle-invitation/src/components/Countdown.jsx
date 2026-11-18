@@ -71,7 +71,7 @@ export const Countdown = () => {
           <h2 className="section-title gold-accent">Counting Every Blessed Moment</h2>
 
           <p className="section-subtitle">
-            Until we gather together in love and fellowship to dedicate baby Halesh.
+            Until we gather together in love and fellowship for this joyful celebration.
           </p>
 
           <OrnateDivider maxWidth={320} />
